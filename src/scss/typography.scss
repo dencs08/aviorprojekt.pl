@@ -1,5 +1,17 @@
 @import "./variables";
 
+.font-serif {
+  font-family: "Playfair Display" !important;
+}
+
+.font-sans-serif {
+  font-family: "Poppins" !important;
+}
+
+.font-sans-serif-p {
+  font-family: "Open Sans" !important;
+}
+
 .font-color-dark {
   color: $font-color-dark;
 }
