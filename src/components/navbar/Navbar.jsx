@@ -31,7 +31,7 @@ const Navbar = () => {
         <img src={logo} alt="aviorprojekt logo" className="w-12 mr-5" />
       </div>
       <div className="flex justify-end items-center flex-1">
-        <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans-serif">
+        <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans">
           <Menu />
         </div>
         <div className="flex md:hidden">
@@ -50,7 +50,7 @@ const Navbar = () => {
           )}
           {toggleMenu && (
             <div className="flex flex-col text-right justify-end absolute top-16 right-5 rounded-lg navbar-menu_container shadow-drop-center scale-up-center">
-              <div className="px-7 py-5 uppercase font-normal font-sans-serif font-color-white">
+              <div className="px-7 py-5 uppercase font-normal font-sans font-color-white">
                 <Menu />
               </div>
             </div>
