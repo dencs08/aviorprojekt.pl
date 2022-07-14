@@ -1,44 +1,42 @@
 @import "./variables";
 
 .btn {
+  font-size: clamp(0.75em, 2vw, 1em);
+  padding: 1.75em 4em;
 }
 
-.btn-primary {
-  /* ff 3.6+ */
+.btn-action {
   background: -moz-linear-gradient(
     90deg,
     rgba(255, 255, 0, 1) 0%,
     rgba(255, 59, 0, 1) 100%
   );
-
-  /* safari 5.1+,chrome 10+ */
   background: -webkit-linear-gradient(
     90deg,
     rgba(255, 255, 0, 1) 0%,
     rgba(255, 59, 0, 1) 100%
   );
-
-  /* opera 11.10+ */
   background: -o-linear-gradient(
     90deg,
     rgba(255, 255, 0, 1) 0%,
     rgba(255, 59, 0, 1) 100%
   );
-
-  /* ie 6-9 */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF3B00', endColorstr='#FFFF00', GradientType=0 );
-
-  /* ie 10+ */
   background: -ms-linear-gradient(
     90deg,
     rgba(255, 255, 0, 1) 0%,
     rgba(255, 59, 0, 1) 100%
   );
-
-  /* global 94%+ browsers support */
   background: linear-gradient(
     90deg,
     rgba(255, 255, 0, 1) 0%,
     rgba(255, 59, 0, 1) 100%
   );
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    font-size: clamp(0.6em, 2.5vw, 1em);
+    padding: 1.75em 3.5em;
+  }
 }
