@@ -49,7 +49,7 @@ const Navbar = () => {
             />
           )}
           {toggleMenu && (
-            <div className="flex flex-col text-right justify-end absolute top-16 right-5 rounded-lg navbar-menu_container shadow-drop-center scale-up-center">
+            <div className="flex flex-col text-right justify-end absolute top-16 right-5 rounded-lg drop-shadow-lg navbar-menu_container scale-up-center">
               <div className="px-7 py-5 uppercase font-normal font-sans font-color-white">
                 <Menu />
               </div>
