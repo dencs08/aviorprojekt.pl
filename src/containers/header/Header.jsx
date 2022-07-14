@@ -6,7 +6,7 @@ import headerPhoto from "../../assets/header_photo.png";
 const Header = () => {
   return (
     <section className="section-mt section-mb">
-      <div className="px-10 block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-16 xl:gap-20">
+      <div className="px-5 md:px-10 block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-16 xl:gap-20">
         <div className="col-start-2 col-end-6 ">
           <img src={headerPhoto} className="w-4/6 md:w-full mx-0 md:mx-auto" />
         </div>
