@@ -1,0 +1,7 @@
+.card {
+  background-color: #fcfcff;
+
+  .card-header {
+    font-size: clamp(1rem, 1.4vw, 3rem);
+  }
+}
