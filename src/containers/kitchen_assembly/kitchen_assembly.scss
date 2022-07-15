@@ -1,0 +1,53 @@
+#kitchenAssembly {
+  h4 {
+    font-size: clamp(1.1rem, 4vw, 5rem);
+  }
+
+  .assembly {
+    position: relative;
+    .kitchen {
+      position: absolute;
+
+      top: -22%;
+      //   bottom: 0;
+
+      width: 100%;
+      height: auto;
+
+      transform: translate(0%, 20%);
+    }
+    .plant {
+      position: absolute;
+
+      top: 15%;
+      right: -40%;
+
+      width: 35%;
+      height: auto;
+
+      transform: translate(-100%, 30%);
+    }
+    .table {
+      position: absolute;
+
+      top: 50%;
+      right: 0;
+
+      width: 75%;
+      height: auto;
+
+      transform: translate(-20%, 15%);
+    }
+  }
+
+  .offer {
+    margin-top: clamp(2rem, 15vw, 20rem);
+    font-size: clamp(1.1rem, 1.4vw, 5rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .kitchen {
+    // top: 25%;
+  }
+}
