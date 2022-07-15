@@ -1,0 +1,16 @@
+#whyUs {
+  h3 {
+    font-size: clamp(1rem, 5vw, 10rem);
+  }
+  h4 {
+    font-size: clamp(0.8rem, 1.5vw, 3rem);
+  }
+
+  p {
+    font-size: clamp(0.8rem, 1.25vw, 1.1rem);
+  }
+
+  img {
+    min-width: 500px;
+  }
+}
