@@ -2,6 +2,15 @@
   margin-top: clamp(30px, 4vw, 150px);
 }
 
+.section-mt-xl {
+  margin-top: clamp(30px, 10vw, 250px);
+}
+
 .section-mb {
   margin-bottom: clamp(30px, 4vw, 150px);
+}
+
+.content-wrapper {
+  padding-left: clamp(20px, 5vw, 300px);
+  padding-right: clamp(20px, 5vw, 300px);
 }
