@@ -6,10 +6,10 @@ import "./navbar.scss";
 const Menu = () => (
   <>
     <p>
-      <a href="#start">Start</a>
+      <a href="/">Start</a>
     </p>
     <p>
-      <a href="#projekty">Projekty</a>
+      <a href="/projekty">Projekty</a>
     </p>
     <p>
       <a href="#dlaczegoMy">Dlaczego my?</a>
