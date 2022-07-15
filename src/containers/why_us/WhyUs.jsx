@@ -53,8 +53,15 @@ const WhyUs = () => {
           </div>
         </div>
         <p className="mt-8 md:mt-12 lg:mt-20">
-          Umów się na <a href="#">spotakanie online</a> i{" "}
-          <a href="#">uzyskaj wstępna wycenę</a> nawet za 15 minut!
+          Umów się na{" "}
+          <a href="#modal" className="link-primary underline font-bold">
+            spotakanie online
+          </a>{" "}
+          i{" "}
+          <a href="#modal" className="link-primary underline font-bold">
+            uzyskaj wstępna wycenę
+          </a>{" "}
+          nawet za 15 minut!
         </p>
       </div>
     </section>

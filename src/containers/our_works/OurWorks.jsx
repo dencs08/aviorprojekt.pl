@@ -32,7 +32,7 @@ const OurWorks = () => {
       </div>
       <p className="text-center mt-40">
         Rzuć okiem na nasze{" "}
-        <span className="underline font-bold">
+        <span className="underline font-bold link-primary">
           <a href="/projekty">inne projekty</a>
         </span>
       </p>

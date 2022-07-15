@@ -46,8 +46,14 @@ const KitchenAssembly = () => {
           </div>
         </div>
         <p className="offer">
-          Sprawdź nasze <a href="#offer">usługi</a> i{" "}
-          <a href="#offer">wybierz ofertę </a>
+          Sprawdź nasze{" "}
+          <a href="#offer" className="link-primary underline font-bold">
+            usługi
+          </a>{" "}
+          i{" "}
+          <a href="#offer" className="link-primary underline font-bold">
+            wybierz ofertę{" "}
+          </a>
           najlepiej dopasowaną do siebie
         </p>
       </div>
