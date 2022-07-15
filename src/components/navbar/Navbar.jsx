@@ -26,38 +26,42 @@ const Menu = () => (
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <div className="px-3 py-5 sm:px-5 md:px-10 flex items-center">
-      <div className="mr-5">
-        <img src={logo} alt="aviorprojekt logo" className="w-12 mr-5" />
-      </div>
-      <div className="flex justify-end items-center flex-1">
-        <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans">
-          <Menu />
+    <nav>
+      <div className="px-3 py-5 sm:px-5 md:px-10 flex items-center">
+        <div className="mr-5 fixed top-5">
+          <a href="/start">
+            <img src={logo} alt="aviorprojekt logo" className="w-12 mr-5" />
+          </a>
         </div>
-        <div className="flex md:hidden">
-          {toggleMenu ? (
-            <RiCloseLine
-              color="black"
-              size={27}
-              onClick={() => setToggleMenu(false)}
-            />
-          ) : (
-            <RiMenu3Line
-              color="black"
-              size={27}
-              onClick={() => setToggleMenu(true)}
-            />
-          )}
-          {toggleMenu && (
-            <div className="flex flex-col text-right justify-end absolute top-16 right-5 rounded-lg drop-shadow-lg navbar-menu_container scale-up-center">
-              <div className="px-7 py-5 uppercase font-normal font-sans font-color-white">
-                <Menu />
+        <div className="flex justify-end items-center flex-1 fixed top-8 right-0">
+          <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans">
+            <Menu />
+          </div>
+          <div className="flex md:hidden">
+            {toggleMenu ? (
+              <RiCloseLine
+                color="black"
+                size={27}
+                onClick={() => setToggleMenu(false)}
+              />
+            ) : (
+              <RiMenu3Line
+                color="black"
+                size={27}
+                onClick={() => setToggleMenu(true)}
+              />
+            )}
+            {toggleMenu && (
+              <div className="flex flex-col text-right justify-end absolute top-16 right-5 rounded-lg drop-shadow-lg navbar-menu_container scale-up-center">
+                <div className="px-7 py-5 uppercase font-normal font-sans font-color-white">
+                  <Menu />
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
