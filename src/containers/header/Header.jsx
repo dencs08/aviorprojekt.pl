@@ -8,7 +8,11 @@ const Header = () => {
     <section className="section-mt section-mb">
       <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-16 xl:gap-20">
         <div className="col-start-2 col-end-6 ">
-          <img src={headerPhoto} className="w-4/6 md:w-full mx-0 md:mx-auto" />
+          <img
+            src={headerPhoto}
+            className="w-4/6 md:w-full mx-0 md:mx-auto"
+            alt="aviorprojekt logo"
+          />
         </div>
         <div className="text-left col-start-6 col-end-12 mx-auto mt-5 md:mt-5 lg:mt-10 xl:mt-20">
           <h1 className="font-serif">
