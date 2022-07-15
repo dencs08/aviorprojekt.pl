@@ -1,2 +1,7 @@
 export { default as Header } from './header/Header'
 export { default as Footer } from './footer/Footer'
+export { default as OurWorks } from './our_works/OurWorks'
+export { default as WhyUs } from './why_us/WhyUs'
+export { default as KitchenAssembly } from './kitchen_assembly/KitchenAssembly'
+export { default as OwnConfiguration } from './own_configuration/OwnConfiguration'
+export { default as Offer } from './offer/Offer'
