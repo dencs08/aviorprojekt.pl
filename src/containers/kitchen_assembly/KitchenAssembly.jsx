@@ -32,11 +32,11 @@ const KitchenAssembly = () => {
           </div>
           <div className="col-span-2">
             <div>
-              <h4 className="font-serif">500</h4>
+              <h4 className="font-serif">+400</h4>
               <p>Zrealizowanych projektów</p>
             </div>
             <div>
-              <h4 className="font-serif">50</h4>
+              <h4 className="font-serif">+400</h4>
               <p>Zadowolonych klientów</p>
             </div>
             <div>
