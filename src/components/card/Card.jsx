@@ -5,7 +5,7 @@ import "./card.scss";
 const Card = ({ title, features }) => {
   const data = features;
   const feautresList = data.map((feature) => (
-    <li className="my-3 flex flex-row flex-initial">
+    <li className="my-3 flex flex-row flex-initial" key={feature}>
       <BsCheck2 color="#745EFF" size={20} className="mt-[3px] mr-1" />
       <span className="w-full">{feature}</span>
     </li>
