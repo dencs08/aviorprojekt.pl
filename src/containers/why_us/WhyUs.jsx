@@ -1,7 +1,24 @@
 import React from "react";
 import "./why_us.scss";
 
+import WhyUsFeature from "../../components/why_us/WhyUsFeature";
 import photo from "../../assets/whyUs_photo.png";
+
+const blocks = [
+  {
+    title: "Elastyczność",
+    text: "Projekt mebli możemy wykonać dla osób bez projektu natomiast jeśli posiadasz już swój projekt bez problemu możemy zająć się zamówieniem ich i montażem w wybranym przez Ciebie terminie",
+  },
+  {
+    title: "Oszczędność",
+    text: "Zajmujemy się nie tylko projektem ale również dostawą mebli oraz ich montażem z wcześniej wykonanymi przez nas pomiarami. Dzięki takim rozwiązaniom nie będziesz musiał dodatkowo tracić czasu i pieniędzy na własne pomiary czy organizowanie dostaw poprzez innych usługodawców.",
+  },
+  {
+    title: "Innowacyjne rozwiązania",
+    text: "Doskonale znamy potrzeby klientów z naszej branży, wiele osób zmaga się z problematycznymi i czasochłonnymi usługami. My rozwiązujemy Twój problem kompleksowo dzięki czemu Twoje marzenia o nowych meblach spełniają się w mgnieniu oka.",
+  },
+];
+
 const WhyUs = () => {
   return (
     <section id="whyUs" className="section-mt section-mb">
@@ -23,33 +40,13 @@ const WhyUs = () => {
             />
           </div>
           <div className="[&>div]:my-8">
-            <div>
-              <h4 className="font-sans">Elastyczność</h4>
-              <p>
-                Projekt mebli możemy wykonać dla osób bez projektu natomiast
-                jeśli posiadasz już swój projekt bez problemu możemy zająć się
-                zamówieniem ich i montażem w wybranym przez Ciebie terminie.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-sans">Oszczędność</h4>
-              <p>
-                Zajmujemy się nie tylko projektem ale również dostawą mebli oraz
-                ich montażem z wcześniej wykonanymi przez nas pomiarami. Dzięki
-                takim rozwiązaniom nie będziesz musiał dodatkowo tracić czasu i
-                pieniędzy na własne pomiary czy organizowanie dostaw poprzez
-                innych usługodawców.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-sans">Innowacyjne rozwiązania</h4>
-              <p>
-                Doskonale znamy potrzeby klientów z naszej branży, wiele osób
-                zmaga się z problematycznymi i czasochłonnymi usługami. My
-                rozwiązujemy Twój problem kompleksowo dzięki czemu Twoje
-                marzenia o nowych meblach spełniają się w mgnieniu oka.
-              </p>
-            </div>
+            {blocks.map((item, index) => (
+              <WhyUsFeature
+                title={item.title}
+                text={item.text}
+                key={item.title + index}
+              />
+            ))}
           </div>
         </div>
         <p className="mt-8 md:mt-12 lg:mt-20">
