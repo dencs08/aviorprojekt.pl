@@ -5,4 +5,8 @@
   h4 {
     font-size: clamp(1rem, 1.75vw, 5rem);
   }
+  .crop-down {
+    object-fit: cover;
+    object-position: 100% 500px !important;
+  }
 }

@@ -1,20 +1,28 @@
 import React from "react";
+import { RiHandCoinFill } from "react-icons/ri";
+import { HiAdjustments } from "react-icons/hi";
+import { FaLightbulb } from "react-icons/fa";
 import "./why_us.scss";
 
 import WhyUsFeature from "../../components/why_us/WhyUsFeature";
 import photo from "../../assets/whyUs_photo.png";
 
+import { flower1 } from "../../assets/flower_images";
+
 const blocks = [
   {
     title: "Elastyczność",
+    icon: <HiAdjustments size={40} color="#7482FF" />,
     text: "Projekt mebli możemy wykonać dla osób bez projektu natomiast jeśli posiadasz już swój projekt bez problemu możemy zająć się zamówieniem ich i montażem w wybranym przez Ciebie terminie",
   },
   {
     title: "Oszczędność",
+    icon: <RiHandCoinFill size={40} color="#7482FF" />,
     text: "Zajmujemy się nie tylko projektem ale również dostawą mebli oraz ich montażem z wcześniej wykonanymi przez nas pomiarami. Dzięki takim rozwiązaniom nie będziesz musiał dodatkowo tracić czasu i pieniędzy na własne pomiary czy organizowanie dostaw poprzez innych usługodawców.",
   },
   {
     title: "Innowacyjne rozwiązania",
+    icon: <FaLightbulb size={40} color="#7482FF" />,
     text: "Doskonale znamy potrzeby klientów z naszej branży, wiele osób zmaga się z problematycznymi i czasochłonnymi usługami. My rozwiązujemy Twój problem kompleksowo dzięki czemu Twoje marzenia o nowych meblach spełniają się w mgnieniu oka.",
   },
 ];
@@ -22,7 +30,17 @@ const blocks = [
 const WhyUs = () => {
   return (
     <section id="whyUs" className="section-mt section-mb">
-      <div className="content-wrapper">
+      <div className="content-wrapper relative">
+        <img
+          src={flower1}
+          className="absolute top-[5%] right-[25%] left-[-5%] bottom-1 opacity-10 z-[-1] w-[100px] h-[1000px] rotate-[-35deg]"
+          alt=""
+        />
+        <img
+          src={flower1}
+          className="absolute top-[15%] right-[25%] left-[20%] bottom-1 opacity-10 z-[-1] w-[100px] h-full rotate-[30deg]"
+          alt=""
+        />
         <div>
           <h3 className="font-serif mb-6 sm:mb-10 xl:mb-20">
             <div>Dlaczego warto</div>
@@ -44,6 +62,7 @@ const WhyUs = () => {
               <WhyUsFeature
                 title={item.title}
                 text={item.text}
+                icon={item.icon}
                 key={item.title + index}
               />
             ))}
