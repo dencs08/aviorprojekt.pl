@@ -24,3 +24,12 @@
 .link-primary {
   color: $primary-color;
 }
+
+.lh-0 {
+  line-height: 0;
+}
+
+.crop-down {
+  object-fit: cover;
+  object-position: 100% 500px !important;
+}
