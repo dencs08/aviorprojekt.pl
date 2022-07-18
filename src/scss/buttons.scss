@@ -10,31 +10,24 @@
 }
 
 .btn-action {
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(255, 255, 0, 1) 0%,
-    rgba(255, 59, 0, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(255, 255, 0, 1) 0%,
-    rgba(255, 59, 0, 1) 100%
-  );
-  background: -o-linear-gradient(
-    90deg,
-    rgba(255, 255, 0, 1) 0%,
-    rgba(255, 59, 0, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF3B00', endColorstr='#FFFF00', GradientType=0 );
-  background: -ms-linear-gradient(
-    90deg,
-    rgba(255, 255, 0, 1) 0%,
-    rgba(255, 59, 0, 1) 100%
-  );
+  background: hsla(199, 100%, 75%, 1);
+
   background: linear-gradient(
-    90deg,
-    rgba(255, 255, 0, 1) 0%,
-    rgba(255, 59, 0, 1) 100%
+    -90deg,
+    hsla(199, 100%, 75%, 1) 1%,
+    hsla(199, 68%, 49%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    -90deg,
+    hsla(199, 100%, 75%, 1) 1%,
+    hsla(199, 68%, 49%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    -90deg,
+    hsla(199, 100%, 75%, 1) 1%,
+    hsla(199, 68%, 49%, 1) 100%
   );
 }
 
