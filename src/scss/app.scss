@@ -28,6 +28,8 @@ body {
   color: $font-color-dark;
 
   font-family: "Open Sans" !important;
+
+  overflow-x: hidden;
 }
 
 h1 {
@@ -39,7 +41,6 @@ h2 {
 }
 
 a {
-  color: unset;
   text-decoration: none;
 }
 
@@ -53,6 +54,9 @@ a {
   width: 7px;
   border-radius: 10px;
   margin: 2px;
+}
+li {
+  list-style-type: none;
 }
 
 @media screen and (max-width: 768px) {
