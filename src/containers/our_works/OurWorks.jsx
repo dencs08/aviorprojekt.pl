@@ -13,16 +13,23 @@ const OurWorks = () => {
   return (
     <section id="ourWorks" className="section-mt section-mb">
       <div className="text-center relative content-wrapper relative">
-        <img
-          src={flower3}
-          className="absolute top-[15%] right-[25%] left-[55%] bottom-1 opacity-10 z-[-1] w-[20vw] rotate-[25deg]"
-          alt=""
-        />
-        <img
-          src={flower3}
-          className="absolute top-[8%] right-[25%] left-[25%] bottom-1 opacity-10 z-[-1] w-[25vw] rotate-[-30deg]"
-          alt=""
-        />
+        <div
+          data-scroll
+          data-scroll-speed="-2"
+          data-scroll-direction="horizontal"
+          className="absolute top-[15%] right-[25%] left-[55%] bottom-1  z-[-1] w-[20vw]"
+        >
+          <img src={flower3} className="opacity-10 rotate-[25deg]" alt="" />
+        </div>
+        <div
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-direction="horizontal"
+          className="absolute top-[8%] right-[25%] left-[25%] bottom-1 z-[-1] w-[25vw]"
+        >
+          <img src={flower3} className="opacity-10 rotate-[-30deg]" alt="" />
+        </div>
+
         <h3 className="font-sans mb-20">Nasze prace</h3>
         <div>
           <div className="">

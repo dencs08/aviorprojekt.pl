@@ -31,16 +31,31 @@ const WhyUs = () => {
   return (
     <section id="whyUs" className="section-mt section-mb">
       <div className="content-wrapper relative">
-        <img
-          src={flower1}
-          className="absolute top-[5%] right-[25%] left-[-5%] bottom-1 opacity-10 z-[-1] w-[100px] h-[1000px] rotate-[-35deg]"
-          alt=""
-        />
-        <img
-          src={flower1}
-          className="absolute top-[15%] right-[25%] left-[20%] bottom-1 opacity-10 z-[-1] w-[100px] h-full rotate-[30deg]"
-          alt=""
-        />
+        <div
+          data-scroll
+          data-scroll-speed="2"
+          data-scroll-direction="horizontal"
+          className="absolute top-[5%] left-[5%] bottom-1  z-[-1] w-[100px]"
+        >
+          <img
+            src={flower1}
+            className="opacity-10 rotate-[-35deg] h-[1000px]"
+            alt=""
+          />
+        </div>
+        <div
+          data-scroll
+          data-scroll-speed="-4"
+          data-scroll-direction="horizontal"
+          className="absolute top-[15%] right-[25%] left-[20%] bottom-1 z-[-1] w-[100px]"
+        >
+          <img
+            src={flower1}
+            className="opacity-10 rotate-[30deg] h-full "
+            alt=""
+          />
+        </div>
+
         <div>
           <h3 className="font-serif mb-6 sm:mb-10 xl:mb-20">
             <div>Dlaczego warto</div>

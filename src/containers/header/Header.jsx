@@ -8,24 +8,33 @@ import { flower1, flower2, flower3 } from "../../assets/flower_images";
 const Header = () => {
   return (
     <section className="section-mt section-mb">
-      <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12relative">
-        <img
-          src={flower1}
-          className="absolute top-[-3%] left-[3%] opacity-10 z-[-1] w-[25vw] rotate-[30deg]"
-          alt=""
-        />
-        <img
-          src={flower2}
-          className="absolute top-[-10%] right-[-20%] bottom-1 opacity-10 z-[-1] w-[25vw] rotate-[-25deg]"
-          alt=""
-        />
-        <img
-          src={flower3}
-          className="absolute top-[20%] right-[-20%] bottom-1 opacity-10 z-[-1] w-[25vw] rotate-[-40deg]"
-          alt=""
-        />
+      <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12 relative">
+        <div
+          data-scroll
+          data-scroll-speed="2"
+          className="absolute top-[-25%] left-[3%] w-[25vw] z-[-1]"
+        >
+          <img src={flower1} className="opacity-10 rotate-[30deg]" alt="" />
+        </div>
+        <div
+          data-scroll
+          data-scroll-speed="5"
+          className="absolute top-[-10%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
+        >
+          <img src={flower2} className="opacity-10 rotate-[-25deg]" alt="" />
+        </div>
+        <div
+          data-scroll
+          data-scroll-speed="3"
+          className="absolute top-[20%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
+        >
+          <img src={flower3} className="opacity-10 rotate-[-40deg]" alt="" />
+        </div>
+
         <div className="col-start-2 col-end-6">
           <img
+            data-scroll
+            data-scroll-speed="3"
             src={headerPhoto}
             className="w-4/6 md:w-full mx-0 md:mx-auto"
             alt="aviorprojekt logo"
