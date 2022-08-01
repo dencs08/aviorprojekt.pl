@@ -35,6 +35,7 @@ const Header = () => {
           <img
             data-scroll
             data-scroll-speed="3"
+            data-scroll-delay="0.1"
             src={headerPhoto}
             className="w-4/6 md:w-full mx-0 md:mx-auto"
             alt="aviorprojekt logo"

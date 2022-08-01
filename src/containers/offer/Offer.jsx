@@ -66,9 +66,9 @@ const Offer = () => {
           />
         </div>
         <div
-          data-scroll
-          data-scroll-speed="3"
-          data-scroll-direction="horizontal"
+          // data-scroll
+          // data-scroll-speed="3"
+          // data-scroll-direction="horizontal"
           className="absolute top-[-50%] right-[25%] rotate-[15deg] z-[-1]"
         >
           <img

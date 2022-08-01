@@ -32,26 +32,26 @@ const WhyUs = () => {
     <section id="whyUs" className="section-mt section-mb">
       <div className="content-wrapper relative">
         <div
-          data-scroll
-          data-scroll-speed="2"
-          data-scroll-direction="horizontal"
-          className="absolute top-[5%] left-[5%] bottom-1  z-[-1] w-[100px]"
+          // data-scroll
+          // data-scroll-speed="2"
+          // data-scroll-direction="horizontal"
+          className="absolute top-[-30%] left-[-5%] bottom-1  z-[-1] w-[100px]"
         >
           <img
             src={flower1}
-            className="opacity-10 rotate-[-35deg] h-[1000px]"
+            className="opacity-10 rotate-[-35deg] h-[1000px] crop-down"
             alt=""
           />
         </div>
         <div
-          data-scroll
-          data-scroll-speed="-4"
-          data-scroll-direction="horizontal"
-          className="absolute top-[15%] right-[25%] left-[20%] bottom-1 z-[-1] w-[100px]"
+          // data-scroll
+          // data-scroll-speed="-4"
+          // data-scroll-direction="horizontal"
+          className="absolute top-[-30%] left-[30%] bottom-1 z-[-1] w-[100px]"
         >
           <img
             src={flower1}
-            className="opacity-10 rotate-[30deg] h-full "
+            className="opacity-10 rotate-[30deg] h-[1000px] crop-down"
             alt=""
           />
         </div>

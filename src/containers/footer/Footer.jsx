@@ -8,8 +8,19 @@ const Footer = () => {
     <section>
       <div id="footer" className="grid place-items-center relative">
         <div className="z-10 text-center font-serif absolute bottom-50 top-50">
-          <p className="mb-10">Jesteś zainteresowany?</p>
-          <button className="btn btn-action font-color-white uppercase font-medium font-sans rounded-full">
+          <p
+            className="mb-10"
+            data-scroll
+            data-scroll-speed="3"
+            data-scroll-delay="0.1"
+          >
+            Jesteś zainteresowany?
+          </p>
+          <button
+            className="btn btn-action font-color-white uppercase font-medium font-sans rounded-full"
+            data-scroll
+            data-scroll-speed="2"
+          >
             Napisz do nas
           </button>
         </div>

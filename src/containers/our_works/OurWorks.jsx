@@ -35,16 +35,40 @@ const OurWorks = () => {
           <div className="">
             <img className="mx-auto" src={center} alt="" />
           </div>
-          <div className="absolute top-96 left-80 w-1/5">
+          <div
+            data-scroll
+            data-scroll-speed="3"
+            data-scroll-direction="horizontal"
+            data-scroll-delay="0.1"
+            className="absolute top-96 left-80 w-1/5"
+          >
             <img src={topLeft} alt="" />
           </div>
-          <div className="absolute top-72 right-80 w-1/5">
+          <div
+            data-scroll
+            data-scroll-speed="-3.25"
+            data-scroll-direction="horizontal"
+            data-scroll-delay="0.1"
+            className="absolute top-72 right-80 w-1/5"
+          >
             <img src={topRight} alt="" />
           </div>
-          <div className="absolute bottom-[-10%] left-60 w-1/5">
+          <div
+            data-scroll
+            data-scroll-speed="2"
+            data-scroll-direction="horizontal"
+            data-scroll-delay="0.1"
+            className="absolute bottom-[-10%] left-60 w-1/5"
+          >
             <img src={bottomLeft} alt="" />
           </div>
-          <div className="absolute bottom-[-5%] right-72 w-1/5">
+          <div
+            data-scroll
+            data-scroll-speed="-1"
+            data-scroll-direction="horizontal"
+            data-scroll-delay="0.1"
+            className="absolute bottom-[-5%] right-72 w-1/5"
+          >
             <img src={bottomRight} alt="" />
           </div>
         </div>
