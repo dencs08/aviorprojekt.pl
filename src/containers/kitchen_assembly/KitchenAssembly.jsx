@@ -11,17 +11,17 @@ const KitchenAssembly = () => {
   gsap.fromTo(
     ".kitchen",
     { y: "-20%" },
-    { y: "22%", duration: 1.5, delay: 0.5, ease: "expo" }
+    { y: "40%", duration: 1.5, delay: 0.5, ease: "expo" }
   );
   gsap.fromTo(
     ".table",
-    { x: "-50%" },
-    { x: "-25%", duration: 2, delay: 0.55, ease: "expo" }
+    { x: "-60%" },
+    { x: "-30%", duration: 2, delay: 0.55, ease: "expo" }
   );
   gsap.fromTo(
     ".plant",
     { x: "50%" },
-    { x: "-100%", duration: 2.5, delay: 0.61, ease: "expo" }
+    { x: "-125%", duration: 2.5, delay: 0.61, ease: "expo" }
   );
   gsap.fromTo(
     ".kitchen",
@@ -67,8 +67,8 @@ const KitchenAssembly = () => {
               <h4 className="font-serif">+400</h4>
               <p>Zrealizowanych projektów</p>
             </div>
-            <div>
-              <h4 className="font-serif">+400</h4>
+            <div className="sm-my-6 md:my-8 lg:my-12">
+              <h4 className="font-serif">+450</h4>
               <p>Zadowolonych klientów</p>
             </div>
             <div>
