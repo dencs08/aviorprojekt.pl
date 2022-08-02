@@ -29,7 +29,17 @@
   line-height: 0;
 }
 
-.crop-down {
+.crop-down-xl {
   object-fit: cover;
   object-position: 100% 500px !important;
+}
+
+.crop-down-lg {
+  object-fit: cover;
+  object-position: 100% 300px !important;
+}
+
+.crop-down-md {
+  object-fit: cover;
+  object-position: 100% 200px !important;
 }

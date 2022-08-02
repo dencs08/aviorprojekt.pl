@@ -31,27 +31,24 @@ const WhyUs = () => {
   return (
     <section id="whyUs" className="section-mt section-mb">
       <div className="content-wrapper relative">
-        <div
-          // data-scroll
-          // data-scroll-speed="2"
-          // data-scroll-direction="horizontal"
-          className="absolute top-[-30%] left-[-5%] bottom-1  z-[-1] w-[100px]"
-        >
+        <div className="hidden lg:block absolute top-[-70%] lg:top-[-10%] xl:top-[-20%] left-[60%] lg:left-[-20%] xl:left-[-5%]  z-[-1] w-[100px]">
           <img
             src={flower1}
-            className="opacity-10 rotate-[-35deg] h-[1000px] crop-down"
+            className="hidden lg:block opacity-10 lg:opacity-10 rotate-[-35deg] lg:h-[700px] xl:h-[1000px] crop-down-lg"
             alt=""
           />
         </div>
-        <div
-          // data-scroll
-          // data-scroll-speed="-4"
-          // data-scroll-direction="horizontal"
-          className="absolute top-[-30%] left-[30%] bottom-1 z-[-1] w-[100px]"
-        >
+        <div className="block lg:hidden absolute top-[-10%] left-[60%] z-[-1] w-[100px]">
           <img
             src={flower1}
-            className="opacity-10 rotate-[30deg] h-[1000px] crop-down"
+            className="block lg:hidden opacity-5 rotate-[-35deg] h-[800px]"
+            alt=""
+          />
+        </div>
+        <div className="absolute top-[-60%] lg:top-[-10%] xl:top-[-20%] left-[-5%] lg:left-[30%] xl:left-[30%] z-[-1] w-[100px]">
+          <img
+            src={flower1}
+            className="hidden lg:block opacity-10 lg:opacity-10 rotate-[30deg] lg:h-[700px] xl:h-[1000px] crop-down-lg"
             alt=""
           />
         </div>
@@ -65,7 +62,7 @@ const WhyUs = () => {
           </h3>
         </div>
         <div className="block lg:grid grid-cols-2 relative">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <img
               className="w-3/6 pr-20 absolute right:[-190%] sm:right-[-50%] md:right-[-50%] lg:right-[50%] bottom-5"
               src={photo}
