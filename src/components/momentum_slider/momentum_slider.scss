@@ -11,7 +11,7 @@
 
   &:hover {
     img {
-      height: 30vw !important;
+      filter: brightness(1.1) contrast(1.05);
 
       transition: all 0.5s;
     }
