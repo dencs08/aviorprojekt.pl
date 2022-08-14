@@ -8,8 +8,10 @@
     .kitchen {
       position: absolute;
 
-      top: -22%;
+      top: -10vw;
       //   bottom: 0;
+
+      left: 3vw;
 
       width: 100%;
       height: auto;
@@ -19,7 +21,7 @@
     .plant {
       position: absolute;
 
-      top: 25%;
+      top: 4vw;
       right: -40%;
 
       width: 32.5%;
@@ -30,7 +32,7 @@
     .table {
       position: absolute;
 
-      top: 50%;
+      top: 12.5vw;
       right: 0;
 
       width: 70%;
@@ -46,8 +48,27 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1024px) {
   .kitchen {
-    // top: 25%;
+    top: -8vw !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kitchen {
+    top: -8vw !important;
+    right: 0 !important;
+    left: 10vw !important;
+    width: 90% !important;
+  }
+  .plant {
+    top: 9vw !important;
+    right: -30% !important;
+    width: 28.5% !important;
+  }
+  .table {
+    top: 19vw !important;
+    right: 10% !important;
+    width: 55% !important;
   }
 }
