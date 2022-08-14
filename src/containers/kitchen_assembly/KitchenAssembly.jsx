@@ -16,7 +16,7 @@ const KitchenAssembly = () => {
   gsap.fromTo(
     ".table",
     { x: "-60%" },
-    { x: "-30%", duration: 2, delay: 0.55, ease: "expo" }
+    { x: "-33%", duration: 2, delay: 0.55, ease: "expo" }
   );
   gsap.fromTo(
     ".plant",
@@ -41,7 +41,7 @@ const KitchenAssembly = () => {
           <div
             data-scroll
             data-scroll-speed="3"
-            className="col-span-3 flex flex-col justify-center"
+            className="text-center md:text-left col-span-2 flex flex-col justify-center"
           >
             <h5 className="font-sans">od</h5>
             <h4 className="font-serif">2012</h4>
@@ -51,7 +51,7 @@ const KitchenAssembly = () => {
               marzenia.
             </p>
           </div>
-          <div className="col-span-7 assembly">
+          <div className="col-span-8 assembly">
             <div className="w-5/5">
               <img src={kitchen} className="kitchen" alt="" />
             </div>
@@ -62,16 +62,16 @@ const KitchenAssembly = () => {
               <img src={table} className="table" alt="" />
             </div>
           </div>
-          <div className="col-span-2">
-            <div>
+          <div className="col-span-2 xs:flex sm:flex xs:space-x-8 md:space-x-0 md:block md:space-y-8 mt-[48vw] md:mt-0">
+            <div className="text-center md:text-left">
               <h4 className="font-serif">+400</h4>
               <p>Zrealizowanych projektów</p>
             </div>
-            <div className="sm-my-6 md:my-8 lg:my-12">
+            <div className="text-center md:text-left">
               <h4 className="font-serif">+450</h4>
               <p>Zadowolonych klientów</p>
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <h4 className="font-serif">12</h4>
               <p>Współprac z najlepszymi firmami</p>
             </div>
