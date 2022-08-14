@@ -41,7 +41,6 @@ const OurWorks = () => {
             data-scroll
             data-scroll-speed="3"
             data-scroll-direction="horizontal"
-            data-scroll-delay="0.1"
             className="absolute top-96 left-10 sm:left-16 md:left-32 lg:left-52 xl:left-80 w-1/5 hidden lg:block"
           >
             <img src={topLeft} alt="" />
@@ -50,7 +49,6 @@ const OurWorks = () => {
             data-scroll
             data-scroll-speed="-3.25"
             data-scroll-direction="horizontal"
-            data-scroll-delay="0.1"
             className="absolute top-72 right-10 sm:right-16 md:right-32 lg:right-52 xl:right-80 w-1/5 hidden lg:block"
           >
             <img src={topRight} alt="" />
@@ -59,7 +57,6 @@ const OurWorks = () => {
             data-scroll
             data-scroll-speed="2"
             data-scroll-direction="horizontal"
-            data-scroll-delay="0.1"
             className="absolute bottom-[-10%] left-10 sm:left-16 md:left-32 lg:left-60 w-1/5 hidden lg:block"
           >
             <img src={bottomLeft} alt="" />
@@ -68,14 +65,13 @@ const OurWorks = () => {
             data-scroll
             data-scroll-speed="-1"
             data-scroll-direction="horizontal"
-            data-scroll-delay="0.1"
             className="absolute bottom-[-5%] right-10 sm:right-16 md:right-40 lg:right-72 w-1/5 hidden lg:block"
           >
             <img src={bottomRight} alt="" />
           </div>
         </div>
       </div>
-      <p className="text-center mt-40">
+      <p className="text-center mt-4 sm:mt-10 md:mt-16 lg:mt-32 xl:mt-40">
         Rzuć okiem na nasze{" "}
         <span className="underline font-bold link-primary">
           <a href="/projekty">inne projekty</a>
