@@ -29,7 +29,7 @@ const MomentumSlider = () => {
           {images.map((image) => {
             return (
               <motion.div
-                className="h-[60vh] min-w-[44vw] p-10 image-carousel-wrapper"
+                className="h-[40vh] md:h-[50vh] xl:h-[60vh] min-w-[88vw] sm:min-w[75vw] lg:min-w-[44vw] p-2 md:p-4 lg:p-10 image-carousel-wrapper"
                 key={image}
               >
                 <img
