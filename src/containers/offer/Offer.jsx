@@ -41,9 +41,9 @@ const Offer = () => {
     <section id="offer" className="section-mt section-mb">
       <div className="content-wrapper relative">
         <div
-          data-scroll
-          data-scroll-speed="-4"
-          data-scroll-direction="horizontal"
+          // data-scroll
+          // data-scroll-speed="-4"
+          // data-scroll-direction="horizontal"
           className="absolute top-[-5%] left-[-10%] z-[-1]"
         >
           <img
@@ -54,9 +54,9 @@ const Offer = () => {
         </div>
 
         <div
-          data-scroll
-          data-scroll-speed="2"
-          data-scroll-direction="horizontal"
+          // data-scroll
+          // data-scroll-speed="2"
+          // data-scroll-direction="horizontal"
           className="absolute top-[-10%] right-[-20%] w-[30vw] z-[-1] "
         >
           <img
