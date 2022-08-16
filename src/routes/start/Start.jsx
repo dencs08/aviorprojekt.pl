@@ -2,8 +2,8 @@ import React from "react";
 import {
   Header,
   OurWorks,
-  WhyUs,
-  KitchenAssembly,
+  // WhyUs,
+  OurAcomplishments,
   OwnConfiguration,
   Offer,
 } from "../../containers";
@@ -13,8 +13,8 @@ const Start = () => {
     <div>
       <Header />
       <OurWorks />
-      <WhyUs />
-      <KitchenAssembly />
+      {/* <WhyUs /> */}
+      <OurAcomplishments />
       <OwnConfiguration />
       <Offer />
     </div>

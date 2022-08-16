@@ -1,41 +1,34 @@
 import React from "react";
-import "./kitchen_assembly.scss";
-
-import kitchen from "../../assets/kitchen/kitchen_bg.png";
-import plant from "../../assets/kitchen/plant.png";
-import table from "../../assets/kitchen/kitchen_table.png";
+import "./our_acomplishments.scss";
+import photo from "../../assets/header_photo.png";
 
 import gsap from "gsap";
 
 const KitchenAssembly = () => {
-  gsap.fromTo(
-    ".kitchen",
-    { y: "-20%" },
-    { y: "40%", duration: 1.5, delay: 0.5, ease: "expo" }
-  );
-  gsap.fromTo(
-    ".table",
-    { x: "-60%" },
-    { x: "-33%", duration: 2, delay: 0.55, ease: "expo" }
-  );
-  gsap.fromTo(
-    ".plant",
-    { x: "50%" },
-    { x: "-125%", duration: 2.5, delay: 0.61, ease: "expo" }
-  );
-  gsap.fromTo(
-    ".kitchen",
-    { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
-    {
-      clipPath: "polygon(7% 0%, 82% 0%, 82% 100%, 7% 100%)",
-      duration: 1.5,
-      delay: 1.1,
+  // gsap.fromTo(
+  //   ".arc-photo",
+  //   { scale: 5 },
+  //   { scale: 1, datay: 0.5, duration: 1.5, ease: "expo", scrub: true }
+  // );
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#ourAcomplishments",
+        scrub: 0.3,
+        start: "top top",
+        markers: true,
+        pin: true,
+      },
+    })
+    .to(".arc-photo", {
+      scale: 5,
+      duration: 1,
       ease: "expo",
-    }
-  );
+    });
 
   return (
-    <section id="kitchenAssembly" className="section-mt-xl section-mb">
+    <section id="ourAcomplishments" className="section-mt-xl section-mb">
       <div className="content-wrapper">
         <div className="block md:grid grid-cols-12">
           <div
@@ -51,18 +44,12 @@ const KitchenAssembly = () => {
               marzenia.
             </p>
           </div>
-          <div className="col-span-8 assembly">
-            <div className="w-5/5">
-              <img src={kitchen} className="kitchen" alt="" />
-            </div>
-            <div className="w-2/6">
-              <img src={plant} className="plant" alt="" />
-            </div>
-            <div className="w-4/6">
-              <img src={table} className="table" alt="" />
+          <div className="col-span-8">
+            <div className="lg:block">
+              <img src={photo} className="mx-auto arc-photo" alt="" />
             </div>
           </div>
-          <div className="col-span-2 xs:flex sm:flex xs:space-x-8 md:space-x-0 md:block md:space-y-8 mt-[48vw] md:mt-0">
+          <div className="col-span-2 xs:flex sm:flex xs:space-x-8 md:space-x-0 md:block md:space-y-8 my-auto">
             <div className="text-center md:text-left">
               <h4 className="font-serif">+400</h4>
               <p>Zrealizowanych projektów</p>
@@ -77,7 +64,7 @@ const KitchenAssembly = () => {
             </div>
           </div>
         </div>
-        <p className="offer">
+        <p className="offer mt-8 md:mt-12 lg:mt-16 xl:mt-20">
           Sprawdź nasze{" "}
           <a href="#offer" className="link-primary underline font-bold">
             usługi
