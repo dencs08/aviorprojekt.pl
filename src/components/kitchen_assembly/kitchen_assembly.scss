@@ -1,0 +1,61 @@
+.assembly {
+  position: relative;
+  .kitchen {
+    position: absolute;
+
+    top: -12.5vw;
+    right: -75vw;
+    //   bottom: 0;
+
+    min-width: 120vw !important;
+    // height: auto;
+
+    // transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  .plant {
+    position: absolute;
+
+    top: 5vw;
+    right: -35vw;
+
+    width: 25vw;
+    height: auto;
+
+    //   transform: translate(-100%, 30%);
+  }
+  .table {
+    position: absolute;
+
+    top: 25vw;
+    right: 1vw;
+
+    width: 40vw;
+    height: auto;
+
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    //   transform: translate(-20%, 15%);
+  }
+}
+
+// @media screen and (max-width: 1024px) {
+//   .kitchen {
+//     top: -8vw !important;
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   .kitchen {
+//     top: -8vw !important;
+//     right: 0 !important;
+//     left: 10vw !important;
+//   }
+//   .plant {
+//     top: 9vw !important;
+//     right: -30% !important;
+//   }
+//   .table {
+//     top: 19vw !important;
+//     right: 10% !important;
+//   }
+// }
