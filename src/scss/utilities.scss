@@ -4,12 +4,16 @@
   margin-top: clamp(60px, 10vw, 150px);
 }
 
-.section-mt-xl {
-  margin-top: clamp(30px, 10vw, 250px);
-}
-
 .section-mb {
   margin-bottom: clamp(60px, 10vw, 150px);
+}
+
+.section-mb-xl {
+  margin-bottom: clamp(80px, 15vw, 250px);
+}
+
+.section-mt-xl {
+  margin-top: clamp(80px, 15vw, 250px);
 }
 
 .content-wrapper {
