@@ -6,7 +6,7 @@ import { flower1, flower2, flower3 } from "../../assets/flower_images";
 
 const Header = () => {
   return (
-    <section className="section-mb-xl section-mt min-h-[40vh]">
+    <section className="section-mb-xl section-mt-xl min-h-[40vh]">
       <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12 relative">
         <div
           // data-scroll
@@ -31,10 +31,10 @@ const Header = () => {
         </div>
 
         <div className="text-left col-start-1 col-end-7">
-          <h1 className="font-serif">
+          <h1 className="font-serif" data-scroll data-scroll-speed="3">
             Najlepsze <b>meble na wymiar</b>
           </h1>
-          <h2>
+          <h2 data-scroll data-scroll-speed="5">
             Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki oraz
             przestrzenie biurowe zarówno dla klientów indywidualnych jak i firm
             czy urzędów.
