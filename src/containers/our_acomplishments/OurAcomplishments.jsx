@@ -15,17 +15,20 @@ const KitchenAssembly = () => {
     .timeline({
       scrollTrigger: {
         trigger: "#ourAcomplishments",
-        scrub: 0.3,
-        start: "top top",
+        scrub: 0.75,
+        start: "top 50%",
         markers: true,
-        pin: true,
       },
     })
-    .to(".arc-photo", {
-      scale: 5,
-      duration: 1,
-      ease: "expo",
-    });
+    .fromTo(
+      ".arc-photo",
+      { scale: 2 },
+      {
+        scale: 1,
+        duration: 1,
+        ease: "expo",
+      }
+    );
 
   return (
     <section id="ourAcomplishments" className="section-mt-xl section-mb">
