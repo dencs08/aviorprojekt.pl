@@ -23,13 +23,17 @@
   color: $font-color-light;
 }
 
+html {
+  overflow-x: hidden !important;
+}
+
 body {
   background-color: $bg-color;
   color: $font-color-dark;
 
   font-family: "Open Sans" !important;
 
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 h1 {
