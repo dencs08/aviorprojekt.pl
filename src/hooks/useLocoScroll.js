@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function useLocoScroll(start) {
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
         // if (!start) return;
         let locoScroll = null;
 
@@ -17,6 +19,7 @@ export default function useLocoScroll(start) {
             el: scrollEl,
             smooth: true,
             multiplier: 1,
+            getDirection: true,
             class: "is-reveal",
         });
 
@@ -41,6 +44,13 @@ export default function useLocoScroll(start) {
                 }
                 return null;
             },
+            getBoundingClientRect() {
+                if (locoScroll) {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                }
+                return null;
+            },
+            pinType: document.querySelector("#main-container").style.transform ? "transform" : "fixed"
         });
 
         const lsUpdate = () => {
@@ -49,7 +59,7 @@ export default function useLocoScroll(start) {
             }
         };
 
-        ScrollTrigger.addEventListener("refresh", lsUpdate);
+        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
         ScrollTrigger.refresh();
 
         return () => {
