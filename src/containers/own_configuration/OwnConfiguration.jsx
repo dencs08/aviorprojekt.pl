@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./own_configuration.scss";
 
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitText from "../../utils/Split3.min";
 import useOnScreen from "../../hooks/useOnScreen";
 import cn from "classnames";
@@ -64,6 +65,62 @@ const OwnConfiguration = () => {
     }
   }, [reveal]);
 
+  let endValue1 = window.innerWidth;
+  let endValue2 = window.innerWidth;
+  endValue1 *= 0.5;
+  endValue1 = endValue1 + "vh";
+  endValue2 *= 1.5;
+  endValue2 = endValue2 + "vh";
+  console.log(endValue1, endValue2);
+
+  useEffect(() => {
+    setTimeout(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#ownConfiguration",
+            scrub: 1,
+            start: "top bottom",
+            end: endValue1,
+            // pin: true,
+            markers: true,
+            scroller: "#main-container",
+          },
+        })
+        .to(".configuration-row1", {
+          x: "80%",
+          duration: 1,
+          ease: "none",
+        });
+
+      ScrollTrigger.refresh();
+    });
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#ownConfiguration",
+            scrub: 1,
+            start: "top bottom",
+            end: endValue2,
+            // pin: true,
+            markers: true,
+            scroller: "#main-container",
+          },
+        })
+        .to(".configuration-row2", {
+          x: "-80%",
+          duration: 1,
+          ease: "none",
+        });
+
+      ScrollTrigger.refresh();
+    });
+  }, []);
+
   return (
     <section
       data-scroll-section
@@ -82,34 +139,34 @@ const OwnConfiguration = () => {
 
       <div className="mx-4 md:mx-6 lg:mx-10">
         <div
-          className="configuration-row flex space-x-2 md:space-x-8 mb-6 md:mb-10 lg:ml-[-50vw] mt-4 md:mt-6 lg:mt-10 lg:w-[150vw] "
-          data-scroll
-          data-scroll-speed="-10"
-          data-scroll-direction="horizontal"
+          className="configuration-row1 flex space-x-2 md:space-x-8 mb-6 md:mb-10 ml-[-1800px] mt-4 md:mt-6 lg:mt-10 w-[150vw] "
+          // data-scroll
+          // data-scroll-speed="-10"
+          // data-scroll-direction="horizontal"
         >
           <img src={center} alt="" className="h-[33vh]" />
-          <img src={topLeft} alt="" className="h-[33vh] hidden sm:block" />
-          <img src={topRight} alt="" className="h-[33vh] hidden sm:block" />
-          <img src={bottomLeft} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={bottomRight} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={topRight} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={bottomLeft} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={bottomRight} alt="" className="h-[33vh] hidden lg:block" />
+          <img src={topLeft} alt="" className="h-[33vh]" />
+          <img src={topRight} alt="" className="h-[33vh]" />
+          <img src={bottomLeft} alt="" className="h-[33vh]" />
+          <img src={bottomRight} alt="" className="h-[33vh]" />
+          <img src={topRight} alt="" className="h-[33vh]" />
+          <img src={bottomLeft} alt="" className="h-[33vh]" />
+          <img src={bottomRight} alt="" className="h-[33vh]" />
         </div>
         <div
-          className="configuration-row flex space-x-2 md:space-x-8 lg:ml-[-50vw] lg:w-[150vw] "
-          data-scroll
-          data-scroll-speed="10"
-          data-scroll-direction="horizontal"
+          className="configuration-row2 flex space-x-2 md:space-x-8 ml-[-300px] w-[150vw] "
+          // data-scroll
+          // data-scroll-speed="10"
+          // data-scroll-direction="horizontal"
         >
           <img src={bottomRight} alt="" className="h-[33vh]" />
-          <img src={bottomLeft} alt="" className="h-[33vh] hidden sm:block" />
-          <img src={topRight} alt="" className="h-[33vh] hidden sm:block" />
-          <img src={topLeft} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={center} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={topRight} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={topLeft} alt="" className="h-[33vh] hidden lg:block" />
-          <img src={center} alt="" className="h-[33vh] hidden lg:block" />
+          <img src={bottomLeft} alt="" className="h-[33vh]" />
+          <img src={topRight} alt="" className="h-[33vh]" />
+          <img src={topLeft} alt="" className="h-[33vh]" />
+          <img src={center} alt="" className="h-[33vh]" />
+          <img src={topRight} alt="" className="h-[33vh]" />
+          <img src={topLeft} alt="" className="h-[33vh]" />
+          <img src={center} alt="" className="h-[33vh]" />
         </div>
       </div>
 
