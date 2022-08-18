@@ -1,38 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import "./our_acomplishments.scss";
-import photo from "../../assets/header_photo.png";
+import photo from "../../assets/project/kitchen1_vert.jpg";
 
+import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import SplitText from "../../utils/Split3.min";
 import useOnScreen from "../../hooks/useOnScreen";
 
 const KitchenAssembly = () => {
-  // gsap.fromTo(
-  //   ".arc-photo",
-  //   { scale: 5 },
-  //   { scale: 1, datay: 0.5, duration: 1.5, ease: "expo", scrub: true }
-  // );
-
-  // gsap
-  //   .timeline({
-  //     scrollTrigger: {
-  //       trigger: "#ourAcomplishments",
-  //       scrub: 0.75,
-  //       start: "top 50%",
-  //       markers: true,
-  //     },
-  //   })
-  //   .fromTo(
-  //     ".arc-photo",
-  //     { scale: 2 },
-  //     {
-  //       scale: 1,
-  //       duration: 1,
-  //       ease: "expo",
-  //     }
-  //   );
-
   const ref = useRef(null);
 
   const [reveal, setReveal] = useState(false);
@@ -62,18 +38,47 @@ const KitchenAssembly = () => {
     }
   }, [reveal]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ref.current,
+            scrub: 0.75,
+            start: "700vh 125%",
+            // pin: true,
+            markers: true,
+            scroller: "#main-container",
+          },
+        })
+        .fromTo(
+          ".arc-photo",
+          { scale: 1.5 },
+          {
+            scale: 1,
+            y: "-15%",
+            duration: 1,
+            ease: "expo",
+          }
+        );
+
+      ScrollTrigger.refresh();
+    });
+  }, []);
+
   return (
     <section
       data-scroll-section
       id="ourAcomplishments"
-      className="section-mt-xl section-mb"
+      className="section-mb"
+      ref={ref}
     >
       <div className="content-wrapper">
         <div className="block md:grid grid-cols-12">
           <div
             data-scroll
             data-scroll-speed="3"
-            className="text-center md:text-left col-span-2 flex flex-col justify-center"
+            className="text-center md:text-left col-span-2 flex flex-col justify-center mb-28"
           >
             <h5 className="font-sans">od</h5>
             <h4 className="font-serif">2012</h4>
@@ -88,12 +93,12 @@ const KitchenAssembly = () => {
               <img
                 data-scroll
                 src={photo}
-                className="mx-auto arc-photo animate-reveal"
+                className="mx-auto arc-photo"
                 alt=""
               />
             </div>
           </div>
-          <div className="col-span-2 xs:flex sm:flex xs:space-x-8 md:space-x-0 md:block md:space-y-8 my-auto">
+          <div className="col-span-2 xs:flex sm:flex xs:space-x-12 md:space-x-0 md:block space-y-4 xs:space-y-0 md:space-y-8 my-auto">
             <div className="text-center md:text-left">
               <h4 className="font-serif">+400</h4>
               <p>Zrealizowanych projektów</p>
