@@ -48,7 +48,7 @@ const Header = () => {
     <section
       data-scroll-section
       id="Header"
-      className="section-mb-xl section-mt-xl min-h-[40vh]"
+      className="section-mb-xl section-mt-xl min-h-[30vh] md:lg-min-h-[35vh] lg:min-h-[40vh] xl:min-h-[40vh]"
     >
       <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12 relative">
         <div
