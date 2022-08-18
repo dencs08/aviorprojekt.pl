@@ -6,7 +6,11 @@ import footerLeaves from "../../assets/footer_leaves.png";
 const Footer = () => {
   return (
     <section>
-      <div id="footer" className="grid place-items-center relative">
+      <div
+        data-scroll-section
+        id="footer"
+        className="grid place-items-center relative"
+      >
         <div className="z-10 text-center font-serif absolute bottom-50 top-50">
           <p
             className="mb-10"

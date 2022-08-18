@@ -29,7 +29,7 @@ const blocks = [
 
 const WhyUs = () => {
   return (
-    <section id="whyUs" className="section-mt section-mb">
+    <section data-scroll-section id="whyUs" className="section-mt section-mb">
       <div className="content-wrapper relative">
         <div className="hidden lg:block absolute top-[-70%] lg:top-[-10%] xl:top-[-20%] left-[60%] lg:left-[-20%] xl:left-[-5%]  z-[-1] w-[100px]">
           <img
