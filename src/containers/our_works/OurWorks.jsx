@@ -47,7 +47,7 @@ const OurWorks = () => {
     <section
       data-scroll-section
       id="ourWorks"
-      className="section-mt section-mb"
+      className="section-mt mb-10 md:mb-32 lg:mb-52 xl:mb-96"
     >
       <div className="text-center relative content-wrapper relative">
         <div
