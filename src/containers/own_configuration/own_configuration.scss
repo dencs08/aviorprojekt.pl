@@ -1,12 +1,21 @@
 #ownConfiguration {
   h3 {
+    opacity: 0;
     font-size: clamp(1rem, 5vw, 10rem);
   }
   h4 {
+    opacity: 0;
     font-size: clamp(1rem, 1.75vw, 5rem);
   }
 
   .offer {
     font-size: clamp(1rem, 1.2vw, 3rem);
+  }
+
+  .lineParent {
+    overflow: hidden;
+    .lineChildren {
+      transform: translate(0, 500px);
+    }
   }
 }

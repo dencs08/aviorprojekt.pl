@@ -5,4 +5,11 @@
   p {
     font-size: clamp(0.9rem, 1.5vw, 5rem);
   }
+
+  .lineParent {
+    overflow: hidden;
+    .lineChildren {
+      transform: translate(0, 500px);
+    }
+  }
 }

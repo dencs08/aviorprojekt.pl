@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./our_works.scss";
 
 import center from "../../assets/project/foto8.jpg";
@@ -9,9 +9,46 @@ import bottomRight from "../../assets/project/3.jpg";
 
 import { flower3 } from "../../assets/flower_images";
 
+import gsap from "gsap";
+import SplitText from "../../utils/Split3.min";
+import useOnScreen from "../../hooks/useOnScreen";
+
 const OurWorks = () => {
+  const ref = useRef(null);
+
+  const [reveal, setReveal] = useState(false);
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen);
+  }, [onScreen]);
+
+  useEffect(() => {
+    if (reveal) {
+      const split = new SplitText("#ourWorks-p", {
+        type: "lines",
+        linesClass: "lineChildren",
+      });
+      const splitParent = new SplitText("#ourWorks-p", {
+        type: "lines",
+        linesClass: "lineParent",
+      });
+      gsap.to(split.lines, {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "expo",
+      });
+    }
+  }, [reveal]);
+
   return (
-    <section id="ourWorks" className="section-mt section-mb">
+    <section
+      data-scroll-section
+      id="ourWorks"
+      className="section-mt section-mb"
+    >
       <div className="text-center relative content-wrapper relative">
         <div
           // data-scroll
@@ -34,8 +71,13 @@ const OurWorks = () => {
           Nasze prace
         </h3>
         <div>
-          <div className="">
-            <img className="mx-auto" src={center} alt="" />
+          <div>
+            <img
+              data-scroll
+              className="mx-auto animate-reveal"
+              src={center}
+              alt=""
+            />
           </div>
           <div
             data-scroll
@@ -43,7 +85,7 @@ const OurWorks = () => {
             data-scroll-direction="horizontal"
             className="absolute top-96 left-10 sm:left-16 md:left-32 lg:left-52 xl:left-80 w-1/5 hidden lg:block"
           >
-            <img src={topLeft} alt="" />
+            <img data-scroll className="animate-reveal" src={topLeft} alt="" />
           </div>
           <div
             data-scroll
@@ -51,7 +93,7 @@ const OurWorks = () => {
             data-scroll-direction="horizontal"
             className="absolute top-72 right-10 sm:right-16 md:right-32 lg:right-52 xl:right-80 w-1/5 hidden lg:block"
           >
-            <img src={topRight} alt="" />
+            <img data-scroll className="animate-reveal" src={topRight} alt="" />
           </div>
           <div
             data-scroll
@@ -59,7 +101,12 @@ const OurWorks = () => {
             data-scroll-direction="horizontal"
             className="absolute bottom-[-10%] left-10 sm:left-16 md:left-32 lg:left-60 w-1/5 hidden lg:block"
           >
-            <img src={bottomLeft} alt="" />
+            <img
+              data-scroll
+              className="animate-reveal"
+              src={bottomLeft}
+              alt=""
+            />
           </div>
           <div
             data-scroll
@@ -67,11 +114,21 @@ const OurWorks = () => {
             data-scroll-direction="horizontal"
             className="absolute bottom-[-5%] right-10 sm:right-16 md:right-40 lg:right-72 w-1/5 hidden lg:block"
           >
-            <img src={bottomRight} alt="" />
+            <img
+              data-scroll
+              className="animate-reveal"
+              src={bottomRight}
+              alt=""
+            />
           </div>
         </div>
       </div>
-      <p className="text-center mt-4 sm:mt-10 md:mt-16 lg:mt-32 xl:mt-40">
+      <p
+        data-scroll
+        ref={ref}
+        id="ourWorks-p"
+        className="text-center mt-4 sm:mt-10 md:mt-16 lg:mt-32 xl:mt-40"
+      >
         Rzuć okiem na nasze{" "}
         <span className="underline font-bold link-primary">
           <a href="/projekty">inne projekty</a>

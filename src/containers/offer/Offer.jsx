@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Card from "../../components/card/Card";
 
 import "./offer.scss";
 import { flower1, flower2, flower3 } from "../../assets/flower_images";
+
+import gsap from "gsap";
+import useOnScreen from "../../hooks/useOnScreen";
 
 const offerCards = [
   {
@@ -37,8 +40,33 @@ const offerCards = [
 ];
 
 const Offer = () => {
+  const ref = useRef(null);
+
+  const [reveal, setReveal] = useState(false);
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen);
+  }, [onScreen]);
+
+  useEffect(() => {
+    if (reveal) {
+      gsap.fromTo(
+        "#offer-h3",
+        { x: -250 },
+        {
+          duration: 1,
+          x: 0,
+          // opacity: 1,
+          delay: 0.25,
+          ease: "expo",
+        }
+      );
+    }
+  }, [reveal]);
+
   return (
-    <section id="offer" className="section-mt section-mb">
+    <section data-scroll-section id="offer" className="section-mt section-mb">
       <div className="content-wrapper relative">
         <div
           // data-scroll
@@ -78,7 +106,14 @@ const Offer = () => {
           />
         </div>
 
-        <h3 className="font-serif mb-5 md:mb-10 lg:mb-12">Pakiety usług</h3>
+        <h3
+          data-scroll
+          ref={ref}
+          id="offer-h3"
+          className="font-serif mb-2 md:mb-6 lg:mb-10"
+        >
+          Pakiety usług
+        </h3>
 
         <div className="block lg:grid grid-cols-3 gap-10 lg:gap-22 xl:gap-32 2xl:gap-48">
           {offerCards.map((item, index) => (

@@ -1,0 +1,8 @@
+#Header {
+  .lineParent {
+    overflow: hidden;
+    .lineChildren {
+      transform: translate(0, 500px);
+    }
+  }
+}

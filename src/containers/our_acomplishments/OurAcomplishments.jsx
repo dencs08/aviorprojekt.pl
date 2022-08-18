@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
+
 import "./our_acomplishments.scss";
 import photo from "../../assets/header_photo.png";
 
 import gsap from "gsap";
+import SplitText from "../../utils/Split3.min";
+import useOnScreen from "../../hooks/useOnScreen";
 
 const KitchenAssembly = () => {
   // gsap.fromTo(
@@ -11,27 +14,60 @@ const KitchenAssembly = () => {
   //   { scale: 1, datay: 0.5, duration: 1.5, ease: "expo", scrub: true }
   // );
 
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#ourAcomplishments",
-        scrub: 0.75,
-        start: "top 50%",
-        markers: true,
-      },
-    })
-    .fromTo(
-      ".arc-photo",
-      { scale: 2 },
-      {
-        scale: 1,
+  // gsap
+  //   .timeline({
+  //     scrollTrigger: {
+  //       trigger: "#ourAcomplishments",
+  //       scrub: 0.75,
+  //       start: "top 50%",
+  //       markers: true,
+  //     },
+  //   })
+  //   .fromTo(
+  //     ".arc-photo",
+  //     { scale: 2 },
+  //     {
+  //       scale: 1,
+  //       duration: 1,
+  //       ease: "expo",
+  //     }
+  //   );
+
+  const ref = useRef(null);
+
+  const [reveal, setReveal] = useState(false);
+  const onScreen = useOnScreen(ref, 0.5);
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen);
+  }, [onScreen]);
+
+  useEffect(() => {
+    if (reveal) {
+      const split = new SplitText("#ourAcomplishments-p", {
+        type: "lines",
+        linesClass: "lineChildren",
+      });
+      const splitParent = new SplitText("#ourAcomplishments-p", {
+        type: "lines",
+        linesClass: "lineParent",
+      });
+      gsap.to(split.lines, {
         duration: 1,
+        y: 0,
+        opacity: 1,
+        stagger: 0.1,
         ease: "expo",
-      }
-    );
+      });
+    }
+  }, [reveal]);
 
   return (
-    <section id="ourAcomplishments" className="section-mt-xl section-mb">
+    <section
+      data-scroll-section
+      id="ourAcomplishments"
+      className="section-mt-xl section-mb"
+    >
       <div className="content-wrapper">
         <div className="block md:grid grid-cols-12">
           <div
@@ -49,7 +85,12 @@ const KitchenAssembly = () => {
           </div>
           <div className="col-span-8">
             <div className="lg:block">
-              <img src={photo} className="mx-auto arc-photo" alt="" />
+              <img
+                data-scroll
+                src={photo}
+                className="mx-auto arc-photo animate-reveal"
+                alt=""
+              />
             </div>
           </div>
           <div className="col-span-2 xs:flex sm:flex xs:space-x-8 md:space-x-0 md:block md:space-y-8 my-auto">
@@ -67,12 +108,17 @@ const KitchenAssembly = () => {
             </div>
           </div>
         </div>
-        <p className="offer mt-8 md:mt-12 lg:mt-16 xl:mt-20">
+        <p
+          data-scroll
+          ref={ref}
+          id="ourAcomplishments-p"
+          className="offer mt-8 md:mt-12 lg:mt-16 xl:mt-20"
+        >
           Sprawdź nasze{" "}
           <a href="#offer" className="link-primary underline font-bold">
-            usługi
+            usługi{" "}
           </a>{" "}
-          i{" "}
+          i{"  "}
           <a href="#offer" className="link-primary underline font-bold">
             wybierz ofertę{" "}
           </a>
