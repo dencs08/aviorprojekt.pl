@@ -44,18 +44,19 @@
 //   }
 // }
 
-// @media screen and (max-width: 768px) {
-//   .kitchen {
-//     top: -8vw !important;
-//     right: 0 !important;
-//     left: 10vw !important;
-//   }
-//   .plant {
-//     top: 9vw !important;
-//     right: -30% !important;
-//   }
-//   .table {
-//     top: 19vw !important;
-//     right: 10% !important;
-//   }
-// }
+@media screen and (max-width: 768px) {
+  .kitchen {
+    top: -1vw !important;
+    left: 18vw !important;
+    width: 200vw !important;
+    min-width: 200vw !important;
+  }
+  .plant {
+    top: 16vw !important;
+    right: -20vw !important;
+  }
+  .table {
+    top: 37vw !important;
+    right: 30vw !important;
+  }
+}
