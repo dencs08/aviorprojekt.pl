@@ -52,22 +52,22 @@ const Header = () => {
     >
       <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12 relative">
         <div
-          // data-scroll
-          // data-scroll-speed="2"
-          className="absolute top-[-25%] left-[3%] w-[25vw] z-[-1]"
+          data-scroll
+          data-scroll-speed="4"
+          className="absolute top-[-100%] left-[3%] w-[25vw] z-[-1]"
         >
           <img src={flower1} className="opacity-10 rotate-[30deg]" alt="" />
         </div>
         <div
-          // data-scroll
-          // data-scroll-speed="5"
-          className="absolute top-[-10%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
+          data-scroll
+          data-scroll-speed="5"
+          className="absolute top-[-100%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
         >
           <img src={flower2} className="opacity-10 rotate-[-25deg]" alt="" />
         </div>
         <div
-          // data-scroll
-          // data-scroll-speed="3"
+          data-scroll
+          data-scroll-speed="3"
           className="absolute top-[20%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
         >
           <img src={flower3} className="opacity-10 rotate-[-40deg]" alt="" />
