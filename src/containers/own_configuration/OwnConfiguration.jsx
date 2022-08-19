@@ -71,7 +71,6 @@ const OwnConfiguration = () => {
   endValue1 = endValue1 + "vh";
   endValue2 *= 1.5;
   endValue2 = endValue2 + "vh";
-  console.log(endValue1, endValue2);
 
   useEffect(() => {
     setTimeout(() => {
@@ -79,11 +78,11 @@ const OwnConfiguration = () => {
         .timeline({
           scrollTrigger: {
             trigger: "#ownConfiguration",
-            scrub: 1,
+            scrub: 0.35,
             start: "top bottom",
             end: endValue1,
             // pin: true,
-            markers: true,
+            // markers: true,
             scroller: "#main-container",
           },
         })
@@ -103,11 +102,11 @@ const OwnConfiguration = () => {
         .timeline({
           scrollTrigger: {
             trigger: "#ownConfiguration",
-            scrub: 1,
+            scrub: 0.35,
             start: "top bottom",
             end: endValue2,
             // pin: true,
-            markers: true,
+            // markers: true,
             scroller: "#main-container",
           },
         })

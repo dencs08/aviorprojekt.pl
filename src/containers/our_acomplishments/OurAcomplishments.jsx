@@ -44,10 +44,10 @@ const KitchenAssembly = () => {
         .timeline({
           scrollTrigger: {
             trigger: ref.current,
-            scrub: 0.75,
+            scrub: 0.35,
             start: "700vh 125%",
             // pin: true,
-            markers: true,
+            // markers: true,
             scroller: "#main-container",
           },
         })
