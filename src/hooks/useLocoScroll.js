@@ -19,13 +19,15 @@ export default function useLocoScroll(start) {
             el: scrollEl,
             smooth: true,
             multiplier: 1,
+            lerp: 0.135,
             getDirection: true,
             class: "is-reveal",
         });
 
-        locoScroll.on("scroll", () => {
+        locoScroll.on("scroll", (args) => {
             ScrollTrigger.update();
-        });
+            document.documentElement.setAttribute('data-direction', args.direction)
+        })
 
         ScrollTrigger.scrollerProxy(scrollEl, {
             scrollTop(value) {
