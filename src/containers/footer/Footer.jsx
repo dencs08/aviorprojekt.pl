@@ -5,9 +5,10 @@ import footerLeaves from "../../assets/footer_leaves.png";
 
 const Footer = () => {
   return (
-    <section>
+    <section data-scroll-section>
       <div
-        data-scroll-section
+        data-scroll
+        data-scroll-speed="0"
         id="footer"
         className="grid place-items-center relative"
       >
