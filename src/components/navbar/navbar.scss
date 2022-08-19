@@ -1,5 +1,15 @@
 @import "../../scss/variables.scss";
 
+nav {
+  top: 0;
+  left: 0;
+  transition: transform 0.25s ease-in-out;
+}
+
+html[data-direction="down"] nav {
+  transform: translate3d(0, -200%, 0);
+}
+
 .navbar-menu_container {
   background-color: $primary-color;
 }

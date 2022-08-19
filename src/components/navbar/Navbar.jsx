@@ -27,13 +27,16 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <nav>
-      <div className="px-3 py-5 sm:px-5 md:px-10 flex items-center">
-        <div className="mr-5 fixed top-5">
+      <div
+        id="nav-container"
+        className="px-3 py-5 sm:px-5 md:px-10 flex items-center"
+      >
+        <div className="mr-5 fixed top-5 z-999">
           <a href="/start">
             <img src={logo} alt="aviorprojekt logo" className="w-12 mr-5" />
           </a>
         </div>
-        <div className="flex justify-end items-center flex-1 fixed top-8 right-0">
+        <div className="flex justify-end items-center flex-1 fixed top-8 right-0 z-999">
           <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans">
             <Menu />
           </div>
