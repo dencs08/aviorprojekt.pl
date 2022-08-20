@@ -51,7 +51,7 @@ const Offer = () => {
   }, [onScreen]);
 
   const cards = document.querySelectorAll(".card");
-  console.log(cards);
+
   useEffect(() => {
     if (reveal) {
       const split = new SplitText("#offer-h3", {
@@ -110,7 +110,11 @@ const Offer = () => {
   // }, [reveal]);
 
   return (
-    <section data-scroll-section id="offer" className="mt-[550px] section-mb">
+    <section
+      data-scroll-section
+      id="offer"
+      className="xl:mt-[550px] section-mb"
+    >
       <div className="content-wrapper relative">
         <div
           data-scroll
