@@ -9,15 +9,15 @@ import gsap from "gsap";
 
 const KitchenAssembly = () => {
   let tl = gsap.timeline();
-  tl.to(".kitchen", { x: "-50vw", duration: 1, delay: 0.2, ease: "expo" });
-  tl.to(".kitchen", { scale: "0.65", duration: 0.75, ease: "expo" }, "-=0.15");
-  tl.to(".kitchen", { x: "-35vw", duration: 1.1, ease: "expo" }, "-=0.75");
-  tl.to(".kitchen", { y: "-2vw", duration: 1.1, ease: "expo" }, "-=1.1");
+
+  tl.to(".kitchen", { x: "50vw", duration: 1, ease: "expo.inOut" });
+  tl.to(".kitchen", { y: "-2vw", duration: 1, ease: "sine" }, "-=1");
+  tl.to(".kitchen", { scale: "0.35", duration: 1, ease: "expo" }, "-=0.5");
   tl.fromTo(
     ".kitchen",
     { clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" },
     {
-      clipPath: "polygon(15% 0%, 82% 0%, 82% 100%, 15% 100%)",
+      clipPath: "polygon(12.5% 0%, 82% 0%, 82% 100%, 12.5% 100%)",
       duration: 1.5,
       ease: "expo",
     },
