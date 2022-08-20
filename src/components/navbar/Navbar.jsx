@@ -3,6 +3,8 @@ import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/logo/aviorprojekt_logo_main.svg";
 import "./navbar.scss";
 
+import gsap from "gsap";
+
 const Menu = () => (
   <>
     <p>
@@ -24,6 +26,8 @@ const Menu = () => (
 );
 
 const Navbar = () => {
+  gsap.to("nav", { y: "0%", duration: 0.5, ease: "expo.inOut", delay: 2 });
+
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <nav>
@@ -40,7 +44,7 @@ const Navbar = () => {
           <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans">
             <Menu />
           </div>
-          <div className="flex md:hidden">
+          <div className="flex md:hidden pr-4">
             {toggleMenu ? (
               <RiCloseLine
                 color="black"
