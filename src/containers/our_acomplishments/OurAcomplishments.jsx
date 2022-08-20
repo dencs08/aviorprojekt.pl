@@ -43,7 +43,7 @@ const KitchenAssembly = () => {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: ref.current,
+            trigger: "#ourAcomplishments",
             scrub: 0.35,
             start: "700vh 125%",
             // pin: true,
@@ -67,12 +67,7 @@ const KitchenAssembly = () => {
   }, []);
 
   return (
-    <section
-      data-scroll-section
-      id="ourAcomplishments"
-      className="section-mb"
-      ref={ref}
-    >
+    <section data-scroll-section id="ourAcomplishments" className="section-mb">
       <div className="content-wrapper">
         <div className="block md:grid grid-cols-12">
           <div
@@ -117,7 +112,7 @@ const KitchenAssembly = () => {
           data-scroll
           ref={ref}
           id="ourAcomplishments-p"
-          className="offer mt-8 md:mt-12 lg:mt-16 xl:mt-20"
+          className="offer mt-20 md:mt-2 lg:mt-4 xl:mt-0"
         >
           Sprawdź nasze{" "}
           <a href="#offer" className="link-primary underline font-bold">

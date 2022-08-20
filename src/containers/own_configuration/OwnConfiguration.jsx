@@ -67,7 +67,7 @@ const OwnConfiguration = () => {
 
   let endValue1 = window.innerWidth;
   let endValue2 = window.innerWidth;
-  endValue1 *= 0.5;
+  endValue1 *= 0.3;
   endValue1 = endValue1 + "vh";
   endValue2 *= 1.5;
   endValue2 = endValue2 + "vh";

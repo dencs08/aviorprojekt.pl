@@ -7,6 +7,13 @@
     width: 75%;
   }
 
+  p.offer {
+    font-size: clamp(1.2rem, 1.6vw, 2rem) !important;
+    a {
+      font-size: clamp(1.2rem, 1.6vw, 2rem) !important;
+    }
+  }
+
   .lineParent {
     overflow: hidden;
     .lineChildren {
