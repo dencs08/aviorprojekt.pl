@@ -6,6 +6,10 @@ import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// export function locoScrollTo(target, offset, duration) {
+//     locoScroll.scrollTo();
+// }
+
 export default function useLocoScroll(start) {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -23,6 +27,11 @@ export default function useLocoScroll(start) {
             getDirection: true,
             class: "is-reveal",
         });
+
+        locoScroll.stop();
+        setTimeout(() => {
+            locoScroll.start();
+        }, 2000);
 
         locoScroll.on("scroll", (args) => {
             ScrollTrigger.update();
