@@ -7,12 +7,25 @@ import "./momentum_slider.scss";
 
 import images from "../../assets/projects_images";
 
+import gsap from "gsap";
+
 const MomentumSlider = () => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+  }, []);
+
+  useEffect(() => {
+    gsap.to(".image-carousel-wrapper", {
+      y: "-10%",
+      opacity: 1,
+      duration: 1,
+      stagger: 0.15,
+      ease: "expo",
+      delay: 0.3,
+    });
   }, []);
 
   return (
@@ -29,7 +42,7 @@ const MomentumSlider = () => {
           {images.map((image) => {
             return (
               <motion.div
-                className="h-[40vh] md:h-[50vh] xl:h-[60vh] min-w-[88vw] sm:min-w[75vw] lg:min-w-[44vw] p-2 md:p-4 lg:p-10 image-carousel-wrapper"
+                className="h-[40vh] md:h-[50vh] xl:h-[60vh] min-w-[88vw] sm:min-w[75vw] lg:min-w-[44vw] p-2 md:p-4 lg:p-10 image-carousel-wrapper mt-10 opacity-0"
                 key={image}
               >
                 <img
