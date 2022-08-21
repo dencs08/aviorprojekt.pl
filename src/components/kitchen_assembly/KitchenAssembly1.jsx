@@ -34,7 +34,11 @@ const KitchenAssembly = () => {
     "-=1"
   );
   tl.to(".table", { y: "-10.5vw", duration: 1, ease: "expo" }, "-=1.5");
-  tl.to(".plant", { x: "-22vw", duration: 1.25, ease: "expo" }, "-=1.1");
+  tl.to(
+    ".plant",
+    { x: "-22vw", opacity: 1, duration: 1.25, ease: "expo" },
+    "-=1.1"
+  );
 
   return (
     <div className="assembly">
