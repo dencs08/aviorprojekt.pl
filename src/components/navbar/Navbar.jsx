@@ -30,7 +30,7 @@ const Navbar = () => {
 
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
-    <nav>
+    <nav className="z-999 relative">
       <div
         id="nav-container"
         className="px-3 py-5 sm:px-5 md:px-10 flex items-center"
