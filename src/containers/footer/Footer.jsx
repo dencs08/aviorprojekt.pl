@@ -30,7 +30,7 @@ const Footer = () => {
           </button>
         </div>
         <div className="z-0">
-          <img src={footerLeaves} alt="" />
+          <img src={footerLeaves} className="disable-select" alt="" />
         </div>
       </div>
     </section>

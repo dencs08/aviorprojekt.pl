@@ -56,7 +56,11 @@ const OurWorks = () => {
           data-scroll-direction="horizontal"
           className="absolute top-[15%] right-[25%] left-[55%] bottom-1  z-[-1] w-[20vw]"
         >
-          <img src={flower3} className="opacity-10 rotate-[25deg]" alt="" />
+          <img
+            src={flower3}
+            className="opacity-10 rotate-[25deg] disable-select"
+            alt=""
+          />
         </div>
         <div
           data-scroll
@@ -64,7 +68,11 @@ const OurWorks = () => {
           data-scroll-direction="horizontal"
           className="absolute top-[8%] right-[25%] left-[25%] bottom-1 z-[-1] w-[25vw]"
         >
-          <img src={flower3} className="opacity-10 rotate-[-30deg]" alt="" />
+          <img
+            src={flower3}
+            className="opacity-10 rotate-[-30deg] disable-select"
+            alt=""
+          />
         </div>
 
         <h3 className="font-sans mb-8 md:mb-12 lg:mb-16 xl:mb-20">

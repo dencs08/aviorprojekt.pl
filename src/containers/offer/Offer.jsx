@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import Card from "../../components/card/Card";
+import { Card } from "../../components";
 
 import "./offer.scss";
 import { flower1, flower2, flower3 } from "../../assets/flower_images";
@@ -87,33 +87,11 @@ const Offer = () => {
     }
   }, [reveal]);
 
-  // console.log(ref);
-
-  // useEffect(() => {
-  //   if (reveal) {
-  //     const split = new SplitText("#offer-p", {
-  //       type: "lines",
-  //       linesClass: "lineChildren",
-  //     });
-  //     const splitParent = new SplitText("#offer-p", {
-  //       type: "lines",
-  //       linesClass: "lineParent",
-  //     });
-  //     gsap.to(split.lines, {
-  //       duration: 1,
-  //       y: 0,
-  //       opacity: 1,
-  //       stagger: 0.1,
-  //       ease: "expo",
-  //     });
-  //   }
-  // }, [reveal]);
-
   return (
     <section
       data-scroll-section
       id="offer"
-      className="xl:mt-[550px] section-mb"
+      className="xl:pt-[325px] section-mb"
     >
       <div className="content-wrapper relative">
         <div
@@ -124,7 +102,7 @@ const Offer = () => {
         >
           <img
             src={flower1}
-            className="opacity-10  w-[30vw] rotate-[30deg]"
+            className="opacity-10  w-[30vw] rotate-[30deg] disable-select"
             alt=""
           />
         </div>
@@ -137,14 +115,14 @@ const Offer = () => {
         >
           <img
             src={flower2}
-            className="opacity-10 w-[30vw] rotate-[-20deg]"
+            className="opacity-10 w-[30vw] rotate-[-20deg] disable-select"
             alt=""
           />
         </div>
         <div className="absolute top-[0%] right-[35%] rotate-[15deg] z-[-1]">
           <img
             src={flower3}
-            className="opacity-10 h-[700px] crop-down"
+            className="opacity-10 h-[700px] crop-down disable-select"
             alt=""
           />
         </div>
