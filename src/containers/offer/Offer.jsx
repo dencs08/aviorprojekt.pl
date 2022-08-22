@@ -130,7 +130,6 @@ const Offer = () => {
         <div data-scroll data-scroll-speed="-5">
           <h3
             data-scroll
-            // data-scroll-speed="-8"
             ref={ref}
             id="offer-h3"
             className="font-serif mb-2 md:mb-6 lg:mb-10"
@@ -140,7 +139,6 @@ const Offer = () => {
 
           <div
             data-scroll
-            // data-scroll-speed="-8"
             className="block lg:grid grid-cols-3 gap-10 lg:gap-22 xl:gap-32 2xl:gap-48"
           >
             {offerCards.map((item, index) => (
@@ -153,12 +151,11 @@ const Offer = () => {
           </div>
           <p
             data-scroll
-            // data-scroll-speed="-8"
             data-scroll-class="is-reveal"
             id="offer-p"
             className="text-center w-full sm:w-3/6 mx-auto mt-10"
           >
-            Projekt zabudowy meblowej realizujemy online Montaż i dostawy mebli
+            Projekt zabudowy meblowej realizujemy online. Montaż i dostawy mebli
             realizujemy na terenie Legnicy, Lubina, Jawora oraz powiatu
             złotoryjskiego i sieradzkiego.
           </p>
