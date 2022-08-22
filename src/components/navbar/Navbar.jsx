@@ -20,7 +20,9 @@ const Menu = () => (
       <a href="#offer">Oferta</a>
     </p>
     <p>
-      <a href="#modal">Kontakt</a>
+      <a open-modal="true" href="#modal">
+        Kontakt
+      </a>
     </p>
   </>
 );
