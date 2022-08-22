@@ -137,12 +137,7 @@ const OwnConfiguration = () => {
       </div>
 
       <div className="mx-4 md:mx-6 lg:mx-10">
-        <div
-          className="configuration-row1 flex space-x-2 md:space-x-8 mb-6 md:mb-10 ml-[-1800px] mt-4 md:mt-6 lg:mt-10 w-[150vw] "
-          // data-scroll
-          // data-scroll-speed="-10"
-          // data-scroll-direction="horizontal"
-        >
+        <div className="configuration-row1 flex space-x-2 md:space-x-8 mb-6 md:mb-10 ml-[-1800px] mt-4 md:mt-6 lg:mt-10 w-[150vw] ">
           <img src={center} alt="" className="h-[33vh]" />
           <img src={topLeft} alt="" className="h-[33vh]" />
           <img src={topRight} alt="" className="h-[33vh]" />
@@ -152,12 +147,7 @@ const OwnConfiguration = () => {
           <img src={bottomLeft} alt="" className="h-[33vh]" />
           <img src={bottomRight} alt="" className="h-[33vh]" />
         </div>
-        <div
-          className="configuration-row2 flex space-x-2 md:space-x-8 ml-[-300px] w-[150vw] "
-          // data-scroll
-          // data-scroll-speed="10"
-          // data-scroll-direction="horizontal"
-        >
+        <div className="configuration-row2 flex space-x-2 md:space-x-8 ml-[-300px] w-[150vw] ">
           <img src={bottomRight} alt="" className="h-[33vh]" />
           <img src={bottomLeft} alt="" className="h-[33vh]" />
           <img src={topRight} alt="" className="h-[33vh]" />
@@ -171,11 +161,19 @@ const OwnConfiguration = () => {
 
       <div className="content-wrapper">
         <p data-scroll id="ocP" className="offer mt-4 md:mt-6 lg:mt-10">
-          <a href="#modal" className="underline font-bold link-primary">
+          <a
+            open-modal="true"
+            href="#modal"
+            className="underline font-bold link-primary"
+          >
             Porozmawiajmy
           </a>{" "}
           o Twoich potrzebach i
-          <a href="#modal" className="underline font-bold link-primary">
+          <a
+            open-modal="true"
+            href="#modal"
+            className="underline font-bold link-primary"
+          >
             {" "}
             wybierzmy razem
           </a>{" "}
