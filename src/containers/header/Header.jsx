@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.scss";
 import Assembly from "../../components/kitchen_assembly/KitchenAssembly1";
 
@@ -27,7 +27,7 @@ const Header = () => {
         y: "-0%",
         opacity: "1",
         duration: 1,
-        delay: 2,
+        delay: 1,
         ease: "expo",
       }
     );
@@ -41,6 +41,16 @@ const Header = () => {
         ease: "expo",
       },
       "-=1"
+    );
+    tl.to(
+      "#btn-header",
+      {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        ease: "expo",
+      },
+      "-=0.5"
     );
   }, []);
 
@@ -56,37 +66,58 @@ const Header = () => {
           data-scroll-speed="4"
           className="absolute top-[-100%] left-[3%] w-[25vw] z-[-1]"
         >
-          <img src={flower1} className="opacity-10 rotate-[30deg]" alt="" />
+          <img
+            src={flower1}
+            className="opacity-10 rotate-[30deg] disable-select"
+            alt=""
+          />
         </div>
         <div
           data-scroll
           data-scroll-speed="5"
           className="absolute top-[-100%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
         >
-          <img src={flower2} className="opacity-10 rotate-[-25deg]" alt="" />
+          <img
+            src={flower2}
+            className="opacity-10 rotate-[-25deg] disable-select"
+            alt=""
+          />
         </div>
         <div
           data-scroll
           data-scroll-speed="3"
           className="absolute top-[20%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
         >
-          <img src={flower3} className="opacity-10 rotate-[-40deg]" alt="" />
+          <img
+            src={flower3}
+            className="opacity-10 rotate-[-40deg] disable-select"
+            alt=""
+          />
         </div>
 
         <div className="text-left col-start-1 col-end-7">
-          <h1
-            data-scroll
-            data-scroll-speed="3"
-            id="header-text"
-            className="font-serif opacity-0"
-          >
-            Najlepsze <b>meble na wymiar</b>
-          </h1>
-          <h2 data-scroll data-scroll-speed="5" id="header-text-h2">
-            Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki oraz
-            przestrzenie biurowe zarówno dla klientów indywidualnych jak i firm
-            czy urzędów.
-          </h2>
+          <div data-scroll data-scroll-speed="3">
+            <h1 id="header-text" className="font-serif opacity-0">
+              Najlepsze <b>meble na wymiar</b>
+            </h1>
+          </div>
+          <div data-scroll data-scroll-speed="5">
+            <h2 id="header-text-h2">
+              Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki
+              oraz przestrzenie biurowe zarówno dla klientów indywidualnych jak
+              i firm czy urzędów.
+            </h2>
+          </div>
+
+          <div data-scroll data-scroll-speed="3">
+            <button
+              open-modal="true"
+              id="btn-header"
+              className="btn btn-primary rounded-full font-color-white translate-y-full opacity-0"
+            >
+              Kontakt
+            </button>
+          </div>
         </div>
         <div className="col-start-7 col-end-13">
           <Assembly />
