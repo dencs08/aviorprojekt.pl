@@ -11,7 +11,7 @@ export default function useLocoScroll(start) {
         gsap.registerPlugin(ScrollTrigger);
 
         // if (!start) return;
-        let locoScroll = null;
+        // let locoScroll = null;
 
         const scrollEl = document.querySelector("#main-container");
 
