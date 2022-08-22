@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./header.scss";
 import Assembly from "../../components/kitchen_assembly/KitchenAssembly1";
 
@@ -58,7 +58,7 @@ const Header = () => {
     <section
       data-scroll-section
       id="Header"
-      className="section-mb-xl section-mt-xl min-h-[40vh] md:lg-min-h-[35vh] lg:min-h-[40vh] xl:min-h-[40vh]"
+      className="section-mb-xl section-mt-xl min-h-[375px] md:lg-min-h-[35vh] lg:min-h-[40vh] xl:min-h-[40vh]"
     >
       <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12 relative">
         <div
@@ -95,13 +95,17 @@ const Header = () => {
           />
         </div>
 
-        <div className="text-left col-start-1 col-end-7">
-          <div data-scroll data-scroll-speed="3">
+        <div
+          data-scroll
+          data-scroll-speed="6"
+          className="text-left col-start-1 col-end-7"
+        >
+          <div>
             <h1 id="header-text" className="font-serif opacity-0">
               Najlepsze <b>meble na wymiar</b>
             </h1>
           </div>
-          <div data-scroll data-scroll-speed="5">
+          <div>
             <h2 id="header-text-h2">
               Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki
               oraz przestrzenie biurowe zarówno dla klientów indywidualnych jak
@@ -109,14 +113,16 @@ const Header = () => {
             </h2>
           </div>
 
-          <div data-scroll data-scroll-speed="3">
-            <button
-              open-modal="true"
-              id="btn-header"
-              className="btn btn-primary rounded-full font-color-white translate-y-full opacity-0"
-            >
-              Kontakt
-            </button>
+          <div>
+            <a href="/projekty">
+              {" "}
+              <button
+                id="btn-header"
+                className="btn-action rounded-full font-color-white translate-y-full opacity-0 shadow-lg mt-6 px-8 py-3 md:py-5 px-14"
+              >
+                Nasze prace
+              </button>
+            </a>
           </div>
         </div>
         <div className="col-start-7 col-end-13">
