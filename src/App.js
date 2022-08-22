@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import useLocoScroll from './hooks/useLocoScroll'
 
 import { Navbar } from './components'
+import { Modal } from "./components";
+
 import { Footer } from './containers'
 import { Start, Projects } from './routes'
 import "./scss/app.scss"
@@ -11,6 +13,18 @@ import "./scss/app.scss"
 const App = () => {
     const ref = useRef(null);
     // const [preloader, setPreload] = useState(true);
+
+    const [showModal, setShowModal] = useState(false);
+    const openModal = () => {
+        setShowModal((prev) => !prev);
+    };
+
+    useEffect(() => {
+        const test = document.querySelector("[open-modal]")
+        test.addEventListener('click', function (e) {
+            openModal()
+        })
+    }, [])
 
     useLocoScroll();
 
@@ -47,6 +61,7 @@ const App = () => {
     if (typeof window === "undefined" || !window.document) {
         return null;
     }
+
     return (
 
         <>
@@ -58,6 +73,7 @@ const App = () => {
                 </div>
             ) : ( */}
 
+            <Modal showModal={showModal} setShowModal={setShowModal} />
             <div className="App main-container" id="main-container"
                 data-scroll-container
                 ref={ref}>

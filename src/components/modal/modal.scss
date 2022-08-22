@@ -1,0 +1,97 @@
+.background {
+  z-index: 9999;
+  .modal {
+    h4 {
+      font-size: clamp(1.2rem, 1.6vw, 2.5rem);
+    }
+    a {
+      font-size: clamp(0.9rem, 1vw, 2rem);
+    }
+    p {
+      font-size: clamp(0.9rem, 1vw, 2rem);
+    }
+  }
+  .close-modal {
+    position: absolute;
+    top: 45px;
+    right: 95px;
+    z-index: 10000 !important;
+  }
+  form {
+    min-width: 85%;
+    .email-input {
+      position: relative;
+      input,
+      textarea {
+        min-width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid rgb(65, 65, 65);
+        outline: none;
+        background: transparent;
+      }
+
+      label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.5s;
+      }
+    }
+    textarea:focus ~ label,
+    textarea:valid ~ label,
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -20px;
+      font-size: 14px;
+      color: #5264ae;
+    }
+
+    input:not(:placeholder-shown):not(:focus):invalid {
+      border-bottom: 1px solid red;
+      color: red;
+    }
+    input:not(:placeholder-shown):not(:focus):invalid ~ label {
+      color: red;
+      font-size: 14px;
+      top: -20px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  form {
+    min-width: clamp(250px, 90vw, 500px) !important;
+
+    textarea {
+      padding: 0px 0 !important;
+      font-size: 14px !important;
+      margin-bottom: 15px !important;
+    }
+
+    label {
+      padding: 4px 0 !important;
+      font-size: 14px !important;
+    }
+  }
+  img {
+    display: none !important;
+  }
+  .modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff !important;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+  }
+}
