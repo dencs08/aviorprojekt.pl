@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import logo from "../../assets/logo/aviorprojekt_logo_main.svg";
 import "./navbar.scss";
@@ -14,19 +14,65 @@ const Menu = () => (
       <a href="/projekty">Projekty</a>
     </p>
     <p>
-      <a href="#dlaczegoMy">Dlaczego my?</a>
+      <a href="#ourAcomplishments">Dlaczego my?</a>
     </p>
     <p>
-      <a href="#oferta">Oferta</a>
+      <a href="#offer">Oferta</a>
     </p>
     <p>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#modal">Kontakt</a>
     </p>
   </>
 );
 
 const Navbar = () => {
-  gsap.to("nav", { y: "0%", duration: 0.5, ease: "expo.inOut", delay: 2 });
+  useEffect(() => {
+    gsap.to("nav", { y: "0%", duration: 0.5, ease: "expo.inOut", delay: 0.5 });
+  }, []);
+
+  useEffect(() => {
+    const offerSection = document.querySelector("#offer");
+    const ourAcomplishmentsSection =
+      document.querySelector("#ourAcomplishments");
+
+    var offerLinks = document.querySelectorAll("a[href^='#offer']");
+    var acomplishmentLinks = document.querySelectorAll(
+      "a[href^='#ourAcomplishments']"
+    );
+
+    setTimeout(() => {
+      if (window.location.hash === "#ourAcomplishmentsScroll") {
+        window.locoScroll.scrollTo(ourAcomplishmentsSection);
+      }
+      if (window.location.hash === "#offerScroll") {
+        window.locoScroll.scrollTo(offerSection);
+      }
+    }, 750);
+
+    offerLinks.forEach((element) => {
+      if (!offerSection) {
+        element.setAttribute("href", "/start#offerScroll");
+        return;
+      }
+      element.setAttribute("href", "#offerScroll");
+
+      element.addEventListener("click", function () {
+        window.locoScroll.scrollTo(offerSection);
+      });
+    });
+
+    acomplishmentLinks.forEach((element) => {
+      if (!ourAcomplishmentsSection) {
+        element.setAttribute("href", "/start#ourAcomplishmentsScroll");
+        return;
+      }
+      element.setAttribute("href", "#ourAcomplishmentsScroll");
+
+      element.addEventListener("click", function () {
+        window.locoScroll.scrollTo(ourAcomplishmentsSection);
+      });
+    });
+  }, []);
 
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
