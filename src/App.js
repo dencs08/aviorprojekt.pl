@@ -20,10 +20,18 @@ const App = () => {
     };
 
     useEffect(() => {
-        const test = document.querySelector("[open-modal]")
-        test.addEventListener('click', function (e) {
-            openModal()
-        })
+        const modalActivators = document.querySelectorAll("[open-modal]")
+        modalActivators.forEach(element => {
+            element.addEventListener('click', function (e) {
+                openModal()
+                if (!element.getAttribute('modal-value')) return
+
+                setTimeout(() => {
+                    let offerValue = element.getAttribute('modal-value')
+                    document.getElementById('message').value = 'Dzień dobry, jestem zainteresowany/a usługą ' + offerValue + ', uprzejmie proszę o kontakt w celu przedstawienia szczegółów oferty.';
+                }, []);
+            })
+        });
     }, [])
 
     useLocoScroll();
