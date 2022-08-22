@@ -22,11 +22,39 @@
 }
 
 .underline {
-  text-decoration: underline;
+  text-decoration: none !important;
+  position: relative;
+  // display: inline-block;
+
+  transition: all 0.5s;
+  &:before {
+    background-color: $primary-color !important;
+    bottom: 0px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0%;
+    position: absolute;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s,
+      background-color 0.3s ease 0s;
+    width: 100%;
+  }
+
+  &:hover:before {
+    width: 75%;
+    left: 0;
+
+    background-color: rgb(74, 249, 255) !important;
+  }
 }
 
 .link-primary {
   color: $primary-color;
+
+  transition: color 0.275s ease 0s;
+  &:hover {
+    color: rgb(74, 249, 255);
+  }
 }
 
 .lh-0 {
