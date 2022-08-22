@@ -7,28 +7,41 @@
 
 .btn-primary {
   background: $primary-color;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+
+    background: $secondary-color;
+  }
 }
 
 .btn-action {
-  background: hsla(199, 100%, 75%, 1);
-
+  background-image: hsla(199, 100%, 75%, 1);
+  background-position: 100% 100% !important;
+  background-size: 200% 150% !important;
   background: linear-gradient(
     -90deg,
-    hsla(199, 100%, 75%, 1) 1%,
+    hsla(199, 100%, 85%, 1) 1%,
     hsla(199, 68%, 49%, 1) 100%
   );
 
   background: -moz-linear-gradient(
     -90deg,
-    hsla(199, 100%, 75%, 1) 1%,
+    hsla(199, 100%, 85%, 1) 1%,
     hsla(199, 68%, 49%, 1) 100%
   );
 
   background: -webkit-linear-gradient(
     -90deg,
-    hsla(199, 100%, 75%, 1) 1%,
+    hsla(199, 100%, 85%, 1) 1%,
     hsla(199, 68%, 49%, 1) 100%
   );
+  transition: background-position 0.5s ease;
+
+  &:hover {
+    background-position: 0 0 !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
