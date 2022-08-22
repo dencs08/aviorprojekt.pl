@@ -22,7 +22,11 @@ const Card = ({ title, features }) => {
       </div>
 
       <div className="card-footer text-center">
-        <button className="btn btn-primary rounded-full py-4 w-full font-color-white font-sans font-light shadow-lg">
+        <button
+          open-modal="true"
+          modal-value={title}
+          className="btn btn-primary rounded-full py-4 w-full font-color-white font-sans font-light shadow-lg"
+        >
           Wybierz
         </button>
       </div>
