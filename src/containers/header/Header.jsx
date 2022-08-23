@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "./header.scss";
 import Assembly from "../../components/kitchen_assembly/KitchenAssembly1";
 
@@ -8,50 +8,56 @@ import gsap from "gsap";
 import SplitText from "../../utils/Split3.min";
 
 const Header = () => {
-  useEffect(() => {
-    const tl = gsap.timeline();
-    const split = new SplitText("#header-text-h2", {
+  const tl = useRef();
+  const headerText = useRef();
+  const headerText2 = useRef();
+  const headerBtn = useRef();
+
+  useLayoutEffect(() => {
+    const split = new SplitText(headerText2.current, {
       type: "lines",
       linesClass: "lineChildren",
     });
 
-    const splitParent = new SplitText("#header-text-h2", {
+    const splitParent = new SplitText(headerText2.current, {
       type: "lines",
       linesClass: "lineParent",
     });
 
-    tl.fromTo(
-      "#header-text",
-      { y: "100%" },
-      {
-        y: "-0%",
-        opacity: "1",
-        duration: 1,
-        delay: 1,
-        ease: "expo",
-      }
-    );
-    tl.to(
-      split.lines,
-      {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "expo",
-      },
-      "-=1"
-    );
-    tl.to(
-      "#btn-header",
-      {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        ease: "expo",
-      },
-      "-=0.5"
-    );
+    tl.current = gsap
+      .timeline()
+      .fromTo(
+        headerText.current,
+        { y: "100%" },
+        {
+          y: "-0%",
+          opacity: "1",
+          duration: 1,
+          delay: 1,
+          ease: "expo",
+        }
+      )
+      .to(
+        split.lines,
+        {
+          duration: 1,
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          ease: "expo",
+        },
+        "-=1"
+      )
+      .to(
+        headerBtn.current,
+        {
+          duration: 1,
+          y: 0,
+          opacity: 1,
+          ease: "expo",
+        },
+        "-=0.5"
+      );
   }, []);
 
   return (
@@ -101,12 +107,12 @@ const Header = () => {
           className="text-left col-start-1 col-end-7"
         >
           <div>
-            <h1 id="header-text" className="font-serif opacity-0">
+            <h1 ref={headerText} className="font-serif opacity-0">
               Najlepsze <b>meble na wymiar</b>
             </h1>
           </div>
           <div>
-            <h2 id="header-text-h2">
+            <h2 ref={headerText2}>
               Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki
               oraz przestrzenie biurowe zarówno dla klientów indywidualnych jak
               i firm czy urzędów.
@@ -117,7 +123,7 @@ const Header = () => {
             <a href="/projekty">
               {" "}
               <button
-                id="btn-header"
+                ref={headerBtn}
                 className="btn-action rounded-full font-color-white translate-y-full opacity-0 shadow-lg mt-6 px-8 py-3 md:py-5 md:px-14 w-full md:w-auto"
               >
                 Nasze prace
