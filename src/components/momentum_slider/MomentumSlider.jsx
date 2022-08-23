@@ -12,13 +12,14 @@ import gsap from "gsap";
 const MomentumSlider = () => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
+  const q = gsap.utils.selector(carousel);
 
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   }, []);
 
   useEffect(() => {
-    gsap.to(".image-carousel-wrapper", {
+    gsap.to(q(".image"), {
       y: "-10%",
       opacity: 1,
       duration: 1,
@@ -42,7 +43,7 @@ const MomentumSlider = () => {
           {images.map((image) => {
             return (
               <motion.div
-                className="h-[40vh] md:h-[50vh] xl:h-[60vh] min-w-[88vw] sm:min-w[75vw] lg:min-w-[44vw] p-2 md:p-4 lg:p-10 image-carousel-wrapper mt-10 opacity-0"
+                className="image h-[40vh] md:h-[50vh] xl:h-[60vh] min-w-[88vw] sm:min-w[75vw] lg:min-w-[44vw] p-2 md:p-4 lg:p-10 mt-10 opacity-0"
                 key={image}
               >
                 <img
