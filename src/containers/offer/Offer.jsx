@@ -41,10 +41,10 @@ const offerCards = [
 ];
 
 const Offer = () => {
-  const ref = useRef(null);
+  const offerH3 = useRef();
 
   const [reveal, setReveal] = useState(false);
-  const onScreen = useOnScreen(ref, 0.5);
+  const onScreen = useOnScreen(offerH3, 0.5);
 
   useEffect(() => {
     if (onScreen) setReveal(onScreen);
@@ -54,15 +54,15 @@ const Offer = () => {
 
   useEffect(() => {
     if (reveal) {
-      const split = new SplitText("#offer-h3", {
+      const split = new SplitText(offerH3.current, {
         type: "lines",
         linesClass: "lineChildren",
       });
-      const splitParent = new SplitText("#offer-h3", {
+      const splitParent = new SplitText(offerH3.current, {
         type: "lines",
         linesClass: "lineParent",
       });
-      gsap.set("#offer-h3", {
+      gsap.set(offerH3.current, {
         opacity: 1,
       });
       gsap.to(split.lines, {
@@ -130,8 +130,7 @@ const Offer = () => {
         <div data-scroll data-scroll-speed="-5">
           <h3
             data-scroll
-            ref={ref}
-            id="offer-h3"
+            ref={offerH3}
             className="font-serif mb-2 md:mb-6 lg:mb-10"
           >
             Pakiety usług
