@@ -1,4 +1,6 @@
 #Header {
+  margin-top: clamp(80px, 12.5vw, 400px);
+
   .lineParent {
     overflow: hidden;
     .lineChildren {

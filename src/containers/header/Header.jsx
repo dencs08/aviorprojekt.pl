@@ -58,7 +58,7 @@ const Header = () => {
     <section
       data-scroll-section
       id="Header"
-      className="section-mb-xl section-mt-xl min-h-[375px] md:lg-min-h-[35vh] lg:min-h-[40vh] xl:min-h-[40vh]"
+      className="section-mb-xl min-h-[375px] md:lg-min-h-[35vh] lg:min-h-[40vh] xl:min-h-[40vh]"
     >
       <div className="content-wrapper block md:grid grid-cols-12 gap-5 md:gap-10 lg:gap-12 relative">
         <div
@@ -118,7 +118,7 @@ const Header = () => {
               {" "}
               <button
                 id="btn-header"
-                className="btn-action rounded-full font-color-white translate-y-full opacity-0 shadow-lg mt-6 px-8 py-3 md:py-5 px-14"
+                className="btn-action rounded-full font-color-white translate-y-full opacity-0 shadow-lg mt-6 px-8 py-3 md:py-5 md:px-14 w-full md:w-auto"
               >
                 Nasze prace
               </button>
