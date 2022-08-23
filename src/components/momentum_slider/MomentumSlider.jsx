@@ -27,7 +27,7 @@ const MomentumSlider = () => {
       ease: "expo",
       delay: 0.3,
     });
-  }, []);
+  });
 
   return (
     <section>
