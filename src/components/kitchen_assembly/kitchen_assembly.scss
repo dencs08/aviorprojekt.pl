@@ -5,7 +5,7 @@
 
     top: -25.5vw;
     right: -35vw;
-    min-width: 200vw !important;
+    min-width: 200vw;
 
     z-index: -1;
 
@@ -35,18 +35,23 @@
 
 @media screen and (max-width: 768px) {
   .kitchen {
-    top: -15vw !important;
-    right: -5vw !important;
-    width: 200vw !important;
-    min-width: 200vw !important;
+    top: -32.5vw !important;
+    right: -58vw !important;
+
+    width: 300vw !important;
+    min-width: 300vw !important;
   }
   .plant {
     opacity: 0;
-    top: 18vw !important;
-    right: -10vw !important;
+    top: 20vw !important;
+    right: -25vw !important;
+
+    min-width: 35vw;
   }
   .table {
-    top: 37vw !important;
-    right: 30vw !important;
+    top: 42.5vw !important;
+    right: 20vw !important;
+
+    min-width: 60vw;
   }
 }
