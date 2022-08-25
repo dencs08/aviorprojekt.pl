@@ -81,12 +81,12 @@ const App = () => {
                 </div>
             ) : ( */}
 
+            <Navbar />
             <Modal showModal={showModal} setShowModal={setShowModal} />
             <div className="App main-container" id="main-container"
                 data-scroll-container
                 ref={ref}>
                 <div className="content">
-                    <Navbar />
                     <BrowserRouter>
                         <Routes>
                             <Route path="/" element={<Start />} />

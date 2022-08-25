@@ -77,38 +77,41 @@ const Navbar = () => {
   }, []);
 
   const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
-    <nav className="z-999 relative">
+    <nav className="z-999 fixed top-[-10px] md:top-0 right-0">
       <div
         id="nav-container"
         className="px-3 py-5 sm:px-5 md:px-10 flex items-center"
       >
-        <div className="mr-5 fixed top-5 z-999">
+        <div className="mr-5 z-999">
           <a href="/start">
             <img src={logo} alt="aviorprojekt logo" className="w-12 mr-5" />
           </a>
         </div>
-        <div className="flex justify-end items-center flex-1 fixed top-8 right-0 z-999">
+        <div className="flex justify-end items-center absolute right-[-5px] flex-1 z-999">
           <div className="hidden md:flex flex-row [&>p]:mr-10 uppercase font-normal font-sans">
             <Menu />
           </div>
           <div className="flex md:hidden pr-4">
             {toggleMenu ? (
               <RiCloseLine
-                color="black"
+                color="grey"
                 size={27}
                 onClick={() => setToggleMenu(false)}
+                className="z-999"
               />
             ) : (
               <RiMenu3Line
                 color="black"
                 size={27}
                 onClick={() => setToggleMenu(true)}
+                className="z-999"
               />
             )}
             {toggleMenu && (
-              <div className="flex flex-col text-right justify-end absolute top-16 right-5 rounded-lg drop-shadow-lg navbar-menu_container scale-up-center">
-                <div className="px-7 py-5 uppercase font-normal font-sans font-color-white">
+              <div className="text-start absolute top-[-32px] right-0 drop-shadow-xl navbar-menu_container">
+                <div className="w-96 max-w-[80vw] h-screen px-10 py-5 uppercase font-normal font-sans font-thin flex flex-col space-y-2 mt-16">
                   <Menu />
                 </div>
               </div>

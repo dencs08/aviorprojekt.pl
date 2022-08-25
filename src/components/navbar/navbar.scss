@@ -13,5 +13,22 @@ html[data-direction="down"] nav {
 }
 
 .navbar-menu_container {
-  background-color: $primary-color;
+  background-color: #fff;
+  p {
+    color: rgb(116, 116, 116);
+    font-size: clamp(0.5rem, 6vw, 1.5rem);
+    position: relative;
+    &::after {
+      content: "";
+      background-color: #cecece;
+      bottom: -3.5px;
+      display: block;
+      height: 1px;
+      left: 0%;
+      position: absolute;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s,
+        background-color 0.3s ease 0s;
+      width: 100%;
+    }
+  }
 }
