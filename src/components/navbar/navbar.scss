@@ -7,9 +7,10 @@ nav {
 
   transform: translate3d(0, -200%, 0);
 }
-
-html[data-direction="down"] nav {
-  transform: translate3d(0, -200%, 0) !important;
+@media screen and (min-width: 768px) {
+  html[data-direction="down"] nav {
+    transform: translate3d(0, -200%, 0) !important;
+  }
 }
 
 .navbar-menu_container {
