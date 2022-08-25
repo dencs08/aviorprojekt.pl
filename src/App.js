@@ -81,7 +81,7 @@ const App = () => {
                 </div>
             ) : ( */}
 
-            <Navbar />
+            <Navbar openModal={openModal} />
             <Modal showModal={showModal} setShowModal={setShowModal} />
             <div className="App main-container" id="main-container"
                 data-scroll-container

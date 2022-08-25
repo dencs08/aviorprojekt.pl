@@ -28,14 +28,14 @@ const Menu = (props) => (
       </a>
     </p>
     <p>
-      <a open-modal="true" onClick={props.navClose} href="#modal">
+      <a open-modal="true" onClick={props.openModal} href="#modal">
         Kontakt
       </a>
     </p>
   </>
 );
 
-const Navbar = () => {
+const Navbar = (props) => {
   useEffect(() => {
     gsap.to("nav", { y: "0%", duration: 0.5, ease: "expo.inOut", delay: 0.5 });
   }, []);
@@ -179,7 +179,7 @@ const Navbar = () => {
                   className="text-start absolute top-[-32px] right-0 drop-shadow-xl navbar-menu_container translate-x-full"
                 >
                   <div className="w-96 max-w-[80vw] h-screen px-10 py-5 uppercase font-normal font-sans font-thin flex flex-col space-y-2 mt-16">
-                    <Menu navClose={navClose} />
+                    <Menu navClose={navClose} openModal={props.openModal} />
                   </div>
                 </div>
               )}
