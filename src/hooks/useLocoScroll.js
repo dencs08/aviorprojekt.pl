@@ -22,6 +22,12 @@ export default function useLocoScroll(start) {
             lerp: 0.135,
             getDirection: true,
             class: "is-reveal",
+            smartphone: {
+                smooth: false
+            },
+            tablet: {
+                smooth: false
+            }
         });
 
         window.locoScroll.stop();
