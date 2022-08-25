@@ -83,7 +83,7 @@ const Modal = ({ showModal, setShowModal }) => {
       />
       {showModal ? (
         <div
-          className="background w-full h-full fixed flex justify-center items-center bg-black/80 cursor-pointer"
+          className="background w-full h-full fixed top-0 flex justify-center items-center bg-black/80 cursor-pointer"
           onClick={closeModal}
           ref={modalRef}
         >
