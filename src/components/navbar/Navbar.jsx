@@ -5,22 +5,30 @@ import "./navbar.scss";
 
 import gsap from "gsap";
 
-const Menu = () => (
+const Menu = (props) => (
   <>
     <p>
-      <a href="/">Start</a>
+      <a onClick={props.navClose} href="/">
+        Start
+      </a>
     </p>
     <p>
-      <a href="/projekty">Projekty</a>
+      <a onClick={props.navClose} href="/projekty">
+        Projekty
+      </a>
     </p>
     <p>
-      <a href="#ourAcomplishments">Dlaczego my?</a>
+      <a onClick={props.navClose} href="#ourAcomplishments">
+        Dlaczego my?
+      </a>
     </p>
     <p>
-      <a href="#offer">Oferta</a>
+      <a onClick={props.navClose} href="#offer">
+        Oferta
+      </a>
     </p>
     <p>
-      <a open-modal="true" href="#modal">
+      <a open-modal="true" onClick={props.navClose} href="#modal">
         Kontakt
       </a>
     </p>
@@ -32,7 +40,7 @@ const Navbar = () => {
     gsap.to("nav", { y: "0%", duration: 0.5, ease: "expo.inOut", delay: 0.5 });
   }, []);
 
-  useEffect(() => {
+  const linksHandler = () => {
     const offerSection = document.querySelector("#offer");
     const ourAcomplishmentsSection =
       document.querySelector("#ourAcomplishments");
@@ -74,7 +82,11 @@ const Navbar = () => {
         window.locoScroll.scrollTo(ourAcomplishmentsSection);
       });
     });
-  }, []);
+  };
+
+  useEffect(() => {
+    linksHandler();
+  });
 
   const navBg = useRef();
   const navMobile = useRef();
@@ -167,7 +179,7 @@ const Navbar = () => {
                   className="text-start absolute top-[-32px] right-0 drop-shadow-xl navbar-menu_container translate-x-full"
                 >
                   <div className="w-96 max-w-[80vw] h-screen px-10 py-5 uppercase font-normal font-sans font-thin flex flex-col space-y-2 mt-16">
-                    <Menu />
+                    <Menu navClose={navClose} />
                   </div>
                 </div>
               )}
