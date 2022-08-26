@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { Card } from "../../components";
 
 import "./offer.scss";
@@ -54,24 +54,11 @@ const Offer = () => {
 
   useEffect(() => {
     if (reveal) {
-      const split = new SplitText(offerH3.current, {
-        type: "lines",
-        linesClass: "lineChildren",
-      });
-      const splitParent = new SplitText(offerH3.current, {
-        type: "lines",
-        linesClass: "lineParent",
-      });
-      gsap.set(offerH3.current, {
-        opacity: 1,
-      });
-      gsap.to(split.lines, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        delay: 0.15,
-        ease: "expo",
-      });
+      gsap.fromTo(
+        offerH3.current,
+        { y: "300%" },
+        { y: 0, duration: 1, ease: "expo" }
+      );
       gsap.fromTo(
         cards,
         { opacity: 0 },
@@ -86,6 +73,36 @@ const Offer = () => {
       );
     }
   }, [reveal]);
+
+  const bottomText = useRef(null);
+
+  const [revealBottomText, setRevealBottomText] = useState(false);
+  const onScreenBottomText = useOnScreen(bottomText, 0.5);
+
+  useEffect(() => {
+    if (onScreenBottomText) setRevealBottomText(onScreenBottomText);
+  }, [onScreenBottomText]);
+
+  useLayoutEffect(() => {
+    if (revealBottomText) {
+      const splitBottomText = new SplitText(bottomText.current, {
+        type: "lines",
+        linesClass: "lineChildren",
+      });
+      const splitBottomTextParent = new SplitText(bottomText.current, {
+        type: "lines",
+        linesClass: "lineParent",
+      });
+      gsap.to(splitBottomText.lines, {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        delay: 0.1,
+        stagger: 0.15,
+        ease: "expo",
+      });
+    }
+  }, [revealBottomText]);
 
   return (
     <section
@@ -128,13 +145,15 @@ const Offer = () => {
         </div>
 
         <div data-scroll data-scroll-speed="-5">
-          <h3
-            data-scroll
-            ref={offerH3}
-            className="font-serif mb-2 md:mb-6 lg:mb-10"
-          >
-            Pakiety usług
-          </h3>
+          <div className="overflow-hidden">
+            <h3
+              data-scroll
+              ref={offerH3}
+              className="font-serif mb-2 md:mb-6 lg:mb-10"
+            >
+              Pakiety usług
+            </h3>
+          </div>
 
           <div
             data-scroll
@@ -149,8 +168,8 @@ const Offer = () => {
             ))}
           </div>
           <p
+            ref={bottomText}
             data-scroll
-            data-scroll-class="is-reveal"
             id="offer-p"
             className="text-center w-full sm:w-3/6 mx-auto mt-10"
           >
