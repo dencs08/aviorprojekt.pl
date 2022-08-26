@@ -118,6 +118,7 @@ const Navbar = (props) => {
           duration: 0.5,
         }
       );
+      linksHandler();
     }, []);
   };
 
