@@ -86,7 +86,7 @@ const Navbar = (props) => {
 
   useEffect(() => {
     linksHandler();
-  });
+  }, []);
 
   const navBg = useRef();
   const navMobile = useRef();
