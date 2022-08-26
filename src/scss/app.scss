@@ -27,6 +27,8 @@
 
 html {
   overflow-x: hidden !important;
+
+  scroll-behavior: auto;
 }
 
 body {
@@ -37,6 +39,8 @@ body {
   font-family: "Open Sans" !important;
 
   overflow-x: hidden !important;
+
+  scroll-behavior: auto;
 }
 
 h1 {
@@ -48,7 +52,7 @@ h2 {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 [data-scroll-container] {
