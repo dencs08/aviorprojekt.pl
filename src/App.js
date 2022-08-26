@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import BounceLoader from 'react-spinners/BounceLoader'
+
 import useLocoScroll from './hooks/useLocoScroll'
 
 import { Navbar } from './components'
@@ -11,8 +13,25 @@ import { Start, Projects } from './routes'
 import "./scss/app.scss"
 
 const App = () => {
-    const ref = useRef(null);
-    // const [preloader, setPreload] = useState(true);
+    const mainContainer = useRef(null);
+    const [preloader, setPreload] = useState(true);
+
+    useLocoScroll(!preloader);
+
+    useEffect(() => {
+        const onPageLoad = () => {
+            setPreload(false);
+        };
+
+        // Check if the page has already loaded
+        if (document.readyState === "complete") {
+            onPageLoad();
+        } else {
+            window.addEventListener("load", onPageLoad);
+            // Remove the event listener when component unmounts
+            return () => window.removeEventListener("load", onPageLoad);
+        }
+    }, []);
 
     const [showModal, setShowModal] = useState(false);
     const openModal = () => {
@@ -34,69 +53,41 @@ const App = () => {
         });
     }, [])
 
-    useLocoScroll();
 
-    useEffect(() => {
-        if (ref) {
-            if (typeof window === "undefined" || !window.document) {
-                return;
-            }
-        }
-    }, []);
-
-    const [timer, setTimer] = React.useState(1);
-
-    const id = React.useRef(null);
-
-    const clear = () => {
-        window.clearInterval(id.current);
-        // setPreload(false);
-    };
-
-    React.useEffect(() => {
-        id.current = window.setInterval(() => {
-            setTimer((time) => time - 1);
-        }, 1000);
-        return () => clear();
-    }, []);
-
-    React.useEffect(() => {
-        if (timer === 0) {
-            clear();
-        }
-    }, [timer]);
-
-    if (typeof window === "undefined" || !window.document) {
-        return null;
-    }
 
     return (
 
         <>
             {/* <CustomCursor /> */}
-            {/* {preloader ? (
-                <div className="loader-wrapper absolute top-[50%] left-[50%] text-center ">
-                    <h1>Aviorprojekt</h1>
-                    <h2>Urządź się tak, jak chcesz.</h2>
-                </div>
-            ) : ( */}
+            {
+                preloader ?
+                    <>
+                        <div className="h-screen w-screen flex justify-center items-center">
+                            <BounceLoader size={75} color={"#289dd2"} loading={preloader} />
+                        </div>
+                    </>
+                    :
+                    <>
+                        <Navbar openModal={openModal} />
+                        <Modal showModal={showModal} setShowModal={setShowModal} />
+                        <div className="App main-container" id="main-container"
+                            data-scroll-container
+                            ref={mainContainer}>
+                            <div className="content">
+                                <BrowserRouter>
+                                    <Routes>
+                                        <Route path="/" element={<Start />} />
+                                        <Route path="/start" element={<Start />} />
+                                        <Route path="/projekty" element={<Projects />} />
+                                    </Routes>
+                                </BrowserRouter>
+                                <Footer />
+                            </div>
+                        </div>
+                    </>
+            }
 
-            <Navbar openModal={openModal} />
-            <Modal showModal={showModal} setShowModal={setShowModal} />
-            <div className="App main-container" id="main-container"
-                data-scroll-container
-                ref={ref}>
-                <div className="content">
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path="/" element={<Start />} />
-                            <Route path="/start" element={<Start />} />
-                            <Route path="/projekty" element={<Projects />} />
-                        </Routes>
-                    </BrowserRouter>
-                    <Footer />
-                </div>
-            </div>
+
 
         </>
 
