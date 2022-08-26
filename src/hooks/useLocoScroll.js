@@ -1,18 +1,17 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "../../node_modules/locomotive-scroll/src/locomotive-scroll.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function useLocoScroll(start) {
-    useEffect(() => {
+    useLayoutEffect(() => {
+        if (!start) return;
+
         gsap.registerPlugin(ScrollTrigger);
-
-        // if (!start) return;
-        // let locoScroll = null;
-
+        let locoScroll = null;
         const scrollEl = document.querySelector("#main-container");
 
         window.locoScroll = new LocomotiveScroll({
@@ -22,6 +21,7 @@ export default function useLocoScroll(start) {
             lerp: 0.135,
             getDirection: true,
             class: "is-reveal",
+            reloadOnContextChange: true,
             smartphone: {
                 smooth: false
             },
@@ -32,6 +32,9 @@ export default function useLocoScroll(start) {
 
         window.locoScroll.stop();
         setTimeout(() => {
+            ScrollTrigger.update()
+            window.locoScroll.update()
+            ScrollTrigger.refresh();
             window.locoScroll.start();
         }, 1000);
 
@@ -83,5 +86,5 @@ export default function useLocoScroll(start) {
                 console.log("Kill", window.locoScroll);
             }
         };
-    }, []);
+    }, [start]);
 }
