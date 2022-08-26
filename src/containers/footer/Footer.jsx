@@ -14,7 +14,7 @@ const Footer = () => {
         id="footer"
         className="grid place-items-center relative"
       >
-        <div className="z-10 text-center font-serif absolute lg:top-[250px] xl:top-[47%]">
+        <div className="z-10 text-center font-serif absolute lg:top-[175px] xl:top-[35%]">
           <p
             className="mb-10"
             data-scroll
@@ -35,7 +35,7 @@ const Footer = () => {
             href="https://www.facebook.com/Avior-Projekt-107288225284129"
             rel="noopener noreferrer nofollow"
             target="_blank"
-            className="flex items-center justify-center mt-5 md:mt-8 lg:mt-12"
+            className="flex items-center justify-center mt-5 md:mt-8 lg:mt-24"
           >
             <BsFacebook
               size={45}
