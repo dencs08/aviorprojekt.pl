@@ -19,6 +19,10 @@ const App = () => {
     useLocoScroll(!preloader);
 
     useEffect(() => {
+        setTimeout(() => {
+            setPreload(false);
+        }, 8000)
+
         const onPageLoad = () => {
             setTimeout(() => {
                 setPreload(false);
@@ -26,7 +30,6 @@ const App = () => {
         };
 
         window.addEventListener('load', function () {
-            console.log("loaded");
             onPageLoad();
         })
     }, []);
