@@ -20,17 +20,15 @@ const App = () => {
 
     useEffect(() => {
         const onPageLoad = () => {
-            setPreload(false);
+            setTimeout(() => {
+                setPreload(false);
+            }, 1500);
         };
 
-        // Check if the page has already loaded
-        if (document.readyState === "complete") {
+        window.addEventListener('load', function () {
+            console.log("loaded");
             onPageLoad();
-        } else {
-            window.addEventListener("load", onPageLoad);
-            // Remove the event listener when component unmounts
-            return () => window.removeEventListener("load", onPageLoad);
-        }
+        })
     }, []);
 
     const [showModal, setShowModal] = useState(false);
@@ -43,6 +41,7 @@ const App = () => {
         modalActivators.forEach(element => {
             element.addEventListener('click', function (e) {
                 openModal()
+                // window.history.pushState({}, document.title, "/" + "");
                 if (!element.getAttribute('modal-value')) return
 
                 setTimeout(() => {
@@ -51,7 +50,7 @@ const App = () => {
                 }, []);
             })
         });
-    }, [])
+    }, [!preloader])
 
 
 
