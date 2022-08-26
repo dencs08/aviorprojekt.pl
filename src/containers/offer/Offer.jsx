@@ -54,6 +54,7 @@ const Offer = () => {
 
   useEffect(() => {
     if (reveal) {
+      gsap.to(offerH3.current, { opacity: 1, duration: 0.1 });
       gsap.fromTo(
         offerH3.current,
         { y: "300%" },
@@ -93,6 +94,7 @@ const Offer = () => {
         type: "lines",
         linesClass: "lineParent",
       });
+      gsap.to(bottomText.current, { opacity: 1, duration: 0.1 });
       gsap.to(splitBottomText.lines, {
         duration: 1,
         y: 0,
@@ -149,7 +151,7 @@ const Offer = () => {
             <h3
               data-scroll
               ref={offerH3}
-              className="font-serif mb-2 md:mb-6 lg:mb-10"
+              className="font-serif mb-2 md:mb-6 lg:mb-10 opacity-0"
             >
               Pakiety usług
             </h3>
@@ -171,7 +173,7 @@ const Offer = () => {
             ref={bottomText}
             data-scroll
             id="offer-p"
-            className="text-center w-full sm:w-3/6 mx-auto mt-10"
+            className="text-center w-full sm:w-3/6 mx-auto mt-10 opacity-0"
           >
             Projekt zabudowy meblowej realizujemy online. Montaż i dostawy mebli
             realizujemy na terenie Legnicy, Lubina, Jawora oraz powiatu

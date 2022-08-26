@@ -21,7 +21,7 @@ const App = () => {
     useEffect(() => {
         setTimeout(() => {
             setPreload(false);
-        }, 8000)
+        }, 4000)
 
         const onPageLoad = () => {
             setTimeout(() => {

@@ -73,7 +73,7 @@ const OwnConfiguration = () => {
       gsap.fromTo(
         bottomText.current,
         { y: "300%" },
-        { y: 0, duration: 1, ease: "expo" }
+        { y: 0, opacity: 1, duration: 1, ease: "expo" }
       );
     }
   }, [revealBottomText]);
@@ -148,11 +148,11 @@ const OwnConfiguration = () => {
           data-scroll
           ref={sectionHeading}
           id="ocH3"
-          className="font-serif mb-2"
+          className="font-serif mb-2 opacity-0"
         >
           Własna Konfiguracja
         </h3>
-        <h4 data-scroll id="ocH4" className="w-full lg:w-3/6">
+        <h4 data-scroll id="ocH4" className="w-full lg:w-3/6 opacity-0">
           U nas masz możliwość wyboru zarówno wzoru frontu, wykończenia jak i
           koloru - wszystko tak jak chcesz.
         </h4>
@@ -186,7 +186,7 @@ const OwnConfiguration = () => {
           data-scroll
           ref={bottomText}
           id="ocP"
-          className="offer mt-4 md:mt-6 lg:mt-10"
+          className="offer mt-4 md:mt-6 lg:mt-10 opacity-0"
         >
           <a
             open-modal="true"
