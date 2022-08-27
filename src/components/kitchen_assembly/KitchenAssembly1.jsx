@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./kitchen_assembly.scss";
 
-import kitchen from "../../assets/kitchen/kitchen_bg.png";
+import kitchen from "../../assets/kitchen/kitchen_bg.jpg";
 import plant from "../../assets/kitchen/plant.png";
 import table from "../../assets/kitchen/kitchen_table.png";
 
