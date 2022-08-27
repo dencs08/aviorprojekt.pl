@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function useLocoScroll(start) {
     useLayoutEffect(() => {
-        if (!start) return;
+        // if (!start) return;
 
         gsap.registerPlugin(ScrollTrigger);
         let locoScroll = null;
@@ -32,11 +32,6 @@ export default function useLocoScroll(start) {
 
         window.locoScroll.stop();
         setTimeout(() => {
-            setTimeout(() => {
-                ScrollTrigger.update()
-                window.locoScroll.update()
-                ScrollTrigger.refresh();
-            }, 500);
             window.locoScroll.start();
         }, 1000);
 
@@ -88,5 +83,5 @@ export default function useLocoScroll(start) {
                 console.log("Kill", window.locoScroll);
             }
         };
-    }, [start]);
+    }, []);
 }
