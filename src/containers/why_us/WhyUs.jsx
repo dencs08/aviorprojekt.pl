@@ -5,7 +5,7 @@ import { FaLightbulb } from "react-icons/fa";
 import "./why_us.scss";
 
 import WhyUsFeature from "../../components/why_us/WhyUsFeature";
-import photo from "../../assets/whyUs_photo.png";
+// import photo from "../../assets/whyUs_photo.png";
 
 import { flower1 } from "../../assets/flower_images";
 
@@ -63,11 +63,11 @@ const WhyUs = () => {
         </div>
         <div className="block lg:grid grid-cols-2 relative">
           <div className="hidden lg:block">
-            <img
+            {/* <img
               className="w-3/6 pr-20 absolute right:[-190%] sm:right-[-50%] md:right-[-50%] lg:right-[50%] bottom-5"
               src={photo}
               alt=""
-            />
+            /> */}
           </div>
           <div className="[&>div]:my-8">
             {blocks.map((item, index) => (
