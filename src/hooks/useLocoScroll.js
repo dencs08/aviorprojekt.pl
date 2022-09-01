@@ -32,6 +32,9 @@ export default function useLocoScroll(start) {
 
         window.locoScroll.stop();
         setTimeout(() => {
+            ScrollTrigger.update();
+            window.locoScroll.update();
+            ScrollTrigger.refresh();
             window.locoScroll.start();
         }, 1000);
 
