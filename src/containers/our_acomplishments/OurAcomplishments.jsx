@@ -5,37 +5,23 @@ import photo from "../../assets/project/kitchen1_vert.jpg";
 
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import SplitText from "../../utils/Split3.min";
 import useOnScreen from "../../hooks/useOnScreen";
 
+import { textReveal, elementReveal } from "../../hooks/reveals";
+
 const KitchenAssembly = () => {
-  const ref = useRef(null);
+  const paragraph = useRef(null);
 
   const [reveal, setReveal] = useState(false);
-  const onScreen = useOnScreen(ref, 0.5);
+  const onScreen = useOnScreen(paragraph, 0.5);
 
   useEffect(() => {
     if (onScreen) setReveal(onScreen);
   }, [onScreen]);
 
   useEffect(() => {
-    if (reveal) {
-      const split = new SplitText("#ourAcomplishments-p", {
-        type: "lines",
-        linesClass: "lineChildren",
-      });
-      const splitParent = new SplitText("#ourAcomplishments-p", {
-        type: "lines",
-        linesClass: "lineParent",
-      });
-      gsap.to(split.lines, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "expo",
-      });
-    }
+    if (!reveal) return;
+    textReveal(paragraph.current, 0.25);
   }, [reveal]);
 
   useEffect(() => {
@@ -46,8 +32,6 @@ const KitchenAssembly = () => {
             trigger: "#ourAcomplishments",
             scrub: 0.35,
             start: "700vh 125%",
-            // pin: true,
-            // markers: true,
             scroller: "#main-container",
           },
         })
@@ -110,8 +94,7 @@ const KitchenAssembly = () => {
         </div>
         <p
           data-scroll
-          ref={ref}
-          id="ourAcomplishments-p"
+          ref={paragraph}
           className="offer mt-20 md:mt-2 lg:mt-4 xl:mt-0"
         >
           Sprawdź nasze{" "}
