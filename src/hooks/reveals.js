@@ -30,7 +30,7 @@ export function elementReveal(el, trigger, startOffset, delay) {
     }, []);
 }
 
-function revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, startOffset, delay) {
+function revealClip(text, delay) {
     // if (!window.matchMedia("(min-width: 1024px)").matches) return;
     if (!text) return;
 
@@ -43,10 +43,6 @@ function revealClip(text, trigger, revealOnly, scrub, pin, animateOpacity, start
     tlScroll
         .to(text, { opacity: 1, autoAlpha: 1, duration: 0, delay: delay })
         .to(elements, { y: "0%", duration: 1.35, stagger: 0.05 })
-
-    if (window.getComputedStyle(text, null).getPropertyValue("content")) tlScroll.to(text, { "--pseudoOpacity": "1", duration: 1 }, "<")
-    if (animateOpacity) tlScroll.fromTo(elements, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.05 }, "<");
-    if (!revealOnly) tlScroll.to(elements, { y: "-100%", duration: 1, stagger: 0.05 });
 
     tlScroll.play();
 }
