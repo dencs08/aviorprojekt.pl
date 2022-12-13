@@ -13,8 +13,8 @@ const Header = () => {
 
   useLayoutEffect(() => {
     setTimeout(() => {
-      textReveal(H1.current, H1.current, true, false, false, false, 0, 0);
-      textReveal(H2.current, H2.current, true, false, false, false, 0, 0.25);
+      textReveal(H1.current, 0);
+      textReveal(H2.current, 0.25);
       elementReveal(headerBtn.current, 0.7);
     }, 1000);
   }, []);
