@@ -6,7 +6,8 @@ import { flower1, flower2, flower3 } from "../../assets/flower_images";
 
 import gsap from "gsap";
 import useOnScreen from "../../hooks/useOnScreen";
-import SplitText from "../../utils/Split3.min";
+
+import { textReveal, elementReveal } from "../../hooks/reveals";
 
 const offerCards = [
   {
@@ -42,68 +43,52 @@ const offerCards = [
 
 const Offer = () => {
   const offerH3 = useRef();
+  const bottomText = useRef(null);
+  const cards = document.querySelectorAll(".card");
 
   const [reveal, setReveal] = useState(false);
   const onScreen = useOnScreen(offerH3, 0.5);
+
+  const [revealBottomText, setRevealBottomText] = useState(false);
+  const onScreenBottomText = useOnScreen(bottomText);
 
   useEffect(() => {
     if (onScreen) setReveal(onScreen);
   }, [onScreen]);
 
-  const cards = document.querySelectorAll(".card");
-
   useEffect(() => {
     if (reveal) {
-      gsap.to(offerH3.current, { opacity: 1, duration: 0.1 });
-      gsap.fromTo(
+      textReveal(
         offerH3.current,
-        { y: "300%" },
-        { y: 0, duration: 1, ease: "expo" }
+        offerH3.current,
+        true,
+        false,
+        false,
+        false,
+        0,
+        0
       );
-      gsap.fromTo(
-        cards,
-        { opacity: 0 },
-        {
-          duration: 2,
-          y: 0,
-          opacity: 1,
-          delay: 0.25,
-          stagger: 0.3,
-          ease: "expo",
-        }
-      );
+
+      elementReveal(cards, 0.25);
     }
   }, [reveal]);
-
-  const bottomText = useRef(null);
-
-  const [revealBottomText, setRevealBottomText] = useState(false);
-  const onScreenBottomText = useOnScreen(bottomText, 0.5);
 
   useEffect(() => {
     if (onScreenBottomText) setRevealBottomText(onScreenBottomText);
   }, [onScreenBottomText]);
 
-  useLayoutEffect(() => {
-    if (revealBottomText) {
-      const splitBottomText = new SplitText(bottomText.current, {
-        type: "lines",
-        linesClass: "lineChildren",
-      });
-      const splitBottomTextParent = new SplitText(bottomText.current, {
-        type: "lines",
-        linesClass: "lineParent",
-      });
-      gsap.to(bottomText.current, { opacity: 1, duration: 0.1 });
-      gsap.to(splitBottomText.lines, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        delay: 0.1,
-        stagger: 0.15,
-        ease: "expo",
-      });
-    }
+  useEffect(() => {
+    if (!revealBottomText) return;
+    textReveal(
+      bottomText.current,
+      bottomText.current,
+      true,
+      false,
+      false,
+      false,
+      0,
+      0.5
+    );
   }, [revealBottomText]);
 
   return (
@@ -147,7 +132,7 @@ const Offer = () => {
         </div>
 
         <div data-scroll data-scroll-speed="-5">
-          <div className="overflow-hidden">
+          <div>
             <h3
               data-scroll
               ref={offerH3}
@@ -157,10 +142,7 @@ const Offer = () => {
             </h3>
           </div>
 
-          <div
-            data-scroll
-            className="block lg:grid grid-cols-3 gap-10 lg:gap-22 xl:gap-32 2xl:gap-48"
-          >
+          <div className="block lg:grid grid-cols-3 gap-10 lg:gap-22 xl:gap-32 2xl:gap-48">
             {offerCards.map((item, index) => (
               <Card
                 title={item.title}
@@ -169,16 +151,14 @@ const Offer = () => {
               />
             ))}
           </div>
-          <p
-            ref={bottomText}
-            data-scroll
-            id="offer-p"
-            className="text-center w-full sm:w-3/6 mx-auto mt-10 opacity-0"
-          >
-            Projekt zabudowy meblowej realizujemy online. Montaż i dostawy mebli
-            realizujemy na terenie Legnicy, Lubina, Jawora oraz powiatu
-            złotoryjskiego i sieradzkiego.
-          </p>
+
+          <div className="mt-10">
+            <p ref={bottomText} className="text-center w-full sm:w-3/6 mx-auto">
+              Projekt zabudowy meblowej realizujemy online. Montaż i dostawy
+              mebli realizujemy na terenie Legnicy, Lubina, Jawora oraz powiatu
+              złotoryjskiego i sieradzkiego.
+            </p>
+          </div>
         </div>
       </div>
     </section>

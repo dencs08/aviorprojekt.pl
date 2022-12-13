@@ -1,18 +1,11 @@
 #offer {
   .card {
-    opacity: 0;
+    visibility: hidden;
   }
   h3 {
     font-size: clamp(1rem, 5vw, 10rem);
   }
   h4 {
     font-size: clamp(1rem, 1.75vw, 5rem);
-  }
-
-  .lineParent {
-    overflow: hidden;
-    .lineChildren {
-      transform: translate(0, 500px);
-    }
   }
 }
