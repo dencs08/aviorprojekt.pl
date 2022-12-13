@@ -13,11 +13,4 @@
       font-size: clamp(1.2rem, 1.6vw, 2rem) !important;
     }
   }
-
-  .lineParent {
-    overflow: hidden;
-    .lineChildren {
-      transform: translate(0, 500px);
-    }
-  }
 }
