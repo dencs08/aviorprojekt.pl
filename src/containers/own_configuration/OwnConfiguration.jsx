@@ -3,7 +3,6 @@ import "./own_configuration.scss";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import SplitText from "../../utils/Split3.min";
 import useOnScreen from "../../hooks/useOnScreen";
 
 import center from "../../assets/project/foto8.jpg";
@@ -12,70 +11,36 @@ import topRight from "../../assets/project/wardrobe1.jpg";
 import bottomLeft from "../../assets/project/countertop1.jpg";
 import bottomRight from "../../assets/project/3.jpg";
 
+import { textReveal } from "../../hooks/reveals";
+
 const OwnConfiguration = () => {
-  const sectionHeading = useRef(null);
+  const h3 = useRef(null);
+  const h4 = useRef(null);
+  const bottomText = useRef(null);
 
   const [revealHeading, setRevealHeading] = useState(false);
-  const onScreenHeading = useOnScreen(sectionHeading, 0.5);
+  const onScreenHeading = useOnScreen(h3);
+
+  const [revealBottomText, setRevealBottomText] = useState(false);
+  const onScreenBottomText = useOnScreen(bottomText);
 
   useEffect(() => {
     if (onScreenHeading) setRevealHeading(onScreenHeading);
   }, [onScreenHeading]);
 
   useLayoutEffect(() => {
-    if (revealHeading) {
-      gsap.to("#ocH3", { opacity: 1, duration: 0.1 });
-      const splith3 = new SplitText("#ocH3", {
-        type: "lines",
-        linesClass: "lineChildren",
-      });
-      const splitParenth3 = new SplitText("#ocH3", {
-        type: "lines",
-        linesClass: "lineParent",
-      });
-      gsap.to(splith3.lines, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "expo",
-      });
-    }
-    gsap.to("#ocH4", { opacity: 1, duration: 0.1 });
-    const splith4 = new SplitText("#ocH4", {
-      type: "lines",
-      linesClass: "lineChildren",
-    });
-    const splitParenth4 = new SplitText("#ocH4", {
-      type: "lines",
-      linesClass: "lineParent",
-    });
-    gsap.to(splith4.lines, {
-      duration: 1,
-      y: 0,
-      opacity: 1,
-      stagger: 0.1,
-      ease: "expo",
-    });
+    if (!revealHeading) return;
+    textReveal(h3.current, 0.25);
+    textReveal(h4.current, 0.65);
   }, [revealHeading]);
-
-  const bottomText = useRef(null);
-
-  const [revealBottomText, setRevealBottomText] = useState(false);
-  const onScreenBottomText = useOnScreen(bottomText, 0.5);
 
   useEffect(() => {
     if (onScreenBottomText) setRevealBottomText(onScreenBottomText);
   }, [onScreenBottomText]);
 
   useLayoutEffect(() => {
-    if (revealBottomText) {
-      gsap.fromTo(
-        bottomText.current,
-        { y: "300%" },
-        { y: 0, opacity: 1, duration: 1, ease: "expo" }
-      );
-    }
+    if (!revealBottomText) return;
+    textReveal(bottomText.current, 0.25);
   }, [revealBottomText]);
 
   let endValue1;
@@ -144,15 +109,10 @@ const OwnConfiguration = () => {
       className="section-mt section-mb"
     >
       <div className="content-wrapper">
-        <h3
-          data-scroll
-          ref={sectionHeading}
-          id="ocH3"
-          className="font-serif mb-2 opacity-0"
-        >
+        <h3 ref={h3} className="font-serif mb-2 opacity-0">
           Własna Konfiguracja
         </h3>
-        <h4 data-scroll id="ocH4" className="w-full lg:w-3/6 opacity-0">
+        <h4 ref={h4} className="w-full lg:w-3/6 opacity-0">
           U nas masz możliwość wyboru zarówno wzoru frontu, wykończenia jak i
           koloru - wszystko tak jak chcesz.
         </h4>
@@ -181,11 +141,10 @@ const OwnConfiguration = () => {
         </div>
       </div>
 
-      <div className="content-wrapper overflow-hidden">
+      <div className="content-wrapper">
         <p
           data-scroll
           ref={bottomText}
-          id="ocP"
           className="offer mt-4 md:mt-6 lg:mt-10 opacity-0"
         >
           <a
