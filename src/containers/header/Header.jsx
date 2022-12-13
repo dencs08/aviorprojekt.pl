@@ -4,60 +4,19 @@ import Assembly from "../../components/kitchen_assembly/KitchenAssembly1";
 
 import { flower1, flower2, flower3 } from "../../assets/flower_images";
 
-import gsap from "gsap";
-import SplitText from "../../utils/Split3.min";
+import { textReveal, elementReveal } from "../../hooks/reveals";
 
 const Header = () => {
-  const tl = useRef();
-  const headerText = useRef();
-  const headerText2 = useRef();
+  const H1 = useRef();
+  const H2 = useRef();
   const headerBtn = useRef();
 
   useLayoutEffect(() => {
-    const split = new SplitText(headerText2.current, {
-      type: "lines",
-      linesClass: "lineChildren",
-    });
-
-    const splitParent = new SplitText(headerText2.current, {
-      type: "lines",
-      linesClass: "lineParent",
-    });
-
-    tl.current = gsap
-      .timeline()
-      .fromTo(
-        headerText.current,
-        { y: "100%" },
-        {
-          y: "-0%",
-          opacity: "1",
-          duration: 1,
-          delay: 1,
-          ease: "expo",
-        }
-      )
-      .to(
-        split.lines,
-        {
-          duration: 1,
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          ease: "expo",
-        },
-        "-=1"
-      )
-      .to(
-        headerBtn.current,
-        {
-          duration: 1,
-          y: 0,
-          opacity: 1,
-          ease: "expo",
-        },
-        "-=0.5"
-      );
+    setTimeout(() => {
+      textReveal(H1.current, H1.current, true, false, false, false, 0, 0);
+      textReveal(H2.current, H2.current, true, false, false, false, 0, 0.25);
+      elementReveal(headerBtn.current, 0.7);
+    }, 1000);
   }, []);
 
   return (
@@ -79,7 +38,6 @@ const Header = () => {
           />
         </div>
         <div
-          data-scroll
           data-scroll-speed="5"
           className="absolute top-[-100%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
         >
@@ -90,7 +48,6 @@ const Header = () => {
           />
         </div>
         <div
-          data-scroll
           data-scroll-speed="3"
           className="absolute top-[20%] right-[-20%] bottom-1 z-[-1] w-[25vw] "
         >
@@ -101,30 +58,23 @@ const Header = () => {
           />
         </div>
 
-        <div
-          data-scroll
-          data-scroll-speed="6"
-          className="text-left col-start-1 col-end-7"
-        >
-          <div>
-            <h1 ref={headerText} className="font-serif opacity-0">
-              Najlepsze <b>meble na wymiar</b>
-            </h1>
-          </div>
-          <div>
-            <h2 ref={headerText2}>
-              Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki
-              oraz przestrzenie biurowe zarówno dla klientów indywidualnych jak
-              i firm czy urzędów.
-            </h2>
-          </div>
+        <div data-scroll-speed="6" className="text-left col-start-1 col-end-7">
+          <h1 ref={H1} className="font-serif reveal">
+            Najlepsze <b>meble na wymiar</b>
+          </h1>
+
+          <h2 ref={H2} className="reveal">
+            Projektujemy nowoczesne i praktyczne kuchnie, garderoby, wnęki oraz
+            przestrzenie biurowe zarówno dla klientów indywidualnych jak i firm
+            czy urzędów.
+          </h2>
 
           <div>
             <a href="/projekty">
               {" "}
               <button
                 ref={headerBtn}
-                className="btn-action rounded-full font-color-white translate-y-full opacity-0 shadow-lg mt-6 px-8 py-3 md:py-5 md:px-14 w-full md:w-auto"
+                className="btn-action rounded-full font-color-white shadow-lg mt-6 px-8 py-3 md:py-5 md:px-14 w-full md:w-auto reveal"
               >
                 Nasze prace
               </button>
