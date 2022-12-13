@@ -9,38 +9,27 @@ import bottomRight from "../../assets/project/3.jpg";
 
 import { flower3 } from "../../assets/flower_images";
 
-import gsap from "gsap";
-import SplitText from "../../utils/Split3.min";
+import { textReveal } from "../../hooks/reveals";
 import useOnScreen from "../../hooks/useOnScreen";
 
 const OurWorks = () => {
-  const ref = useRef(null);
+  const paragraph = useRef(null);
+  const h3 = useRef(null);
 
   const [reveal, setReveal] = useState(false);
-  const onScreen = useOnScreen(ref, 0.5);
+  const onScreen = useOnScreen(paragraph, 0.5);
 
   useEffect(() => {
     if (onScreen) setReveal(onScreen);
   }, [onScreen]);
 
   useEffect(() => {
-    if (reveal) {
-      const split = new SplitText("#ourWorks-p", {
-        type: "lines",
-        linesClass: "lineChildren",
-      });
-      const splitParent = new SplitText("#ourWorks-p", {
-        type: "lines",
-        linesClass: "lineParent",
-      });
-      gsap.to(split.lines, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "expo",
-      });
-    }
+    textReveal(h3.current, 2);
+  }, []);
+
+  useEffect(() => {
+    if (!reveal) return;
+    textReveal(paragraph.current, 0.25);
   }, [reveal]);
 
   return (
@@ -75,7 +64,10 @@ const OurWorks = () => {
           />
         </div>
 
-        <h3 className="font-sans mb-8 md:mb-12 lg:mb-16 xl:mb-20">
+        <h3
+          ref={h3}
+          className="font-sans mb-8 md:mb-12 lg:mb-16 xl:mb-20 reveal"
+        >
           Nasze prace
         </h3>
         <div>
@@ -133,8 +125,7 @@ const OurWorks = () => {
       </div>
       <p
         data-scroll
-        ref={ref}
-        id="ourWorks-p"
+        ref={paragraph}
         className="text-center mt-4 sm:mt-10 md:mt-16 lg:mt-32 xl:mt-40"
       >
         Rzuć okiem na nasze{" "}
